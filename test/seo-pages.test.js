@@ -75,4 +75,5 @@ test("sitemap lists every path once and the index keeps calculator URLs", () => 
   const index = sitemapIndex();
   assert.match(index, /Free-online-calculators\/sitemap\.xml/);
   assert.match(index, /scores\/sitemap\.xml/);
+  assert.match(index, /games\/sitemap\.xml/);
 });

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Streetdate">
+  <rect width="64" height="64" rx="14" fill="#1b1612"/>
+  <rect x="14" y="15" width="36" height="36" rx="5" fill="#fffaf4"/>
+  <path d="M14 22h36v6H14z" fill="#d84a2f"/>
+  <circle cx="23" cy="20.5" r="2" fill="#1b1612"/>
+  <circle cx="41" cy="20.5" r="2" fill="#1b1612"/>
+  <path d="M22 36h20" stroke="#146963" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 43h12" stroke="#8d6424" stroke-width="3" stroke-linecap="round"/>
+</svg>

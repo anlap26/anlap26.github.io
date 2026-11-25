@@ -214,6 +214,7 @@ export function sitemapIndex() {
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap><loc>https://anlap26.github.io/Free-online-calculators/sitemap.xml</loc></sitemap>
   <sitemap><loc>https://anlap26.github.io/scores/sitemap.xml</loc></sitemap>
+  <sitemap><loc>https://anlap26.github.io/games/sitemap.xml</loc></sitemap>
 </sitemapindex>
 `;
 }

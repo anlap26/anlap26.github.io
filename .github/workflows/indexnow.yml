@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scores/**"
+      - "games/**"
       - "sitemap.xml"
       - "robots.txt"
 
@@ -16,5 +17,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Submit scores URLs to IndexNow
+      - name: Submit scores and games URLs to IndexNow
         run: node scripts/indexnow.mjs
