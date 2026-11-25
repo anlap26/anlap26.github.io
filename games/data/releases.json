@@ -1,0 +1,1416 @@
+{
+  "updated": "2026-11-25",
+  "asOf": "2026-11-25",
+  "note": "Source data for the Streetdate calendar. Edit this file, then run node scripts/build-games.mjs. confirmed = publisher page or cited public list. scheduled = public calendars agree and the day can still move. window = year only. tba = no public date.",
+  "games": [
+    {
+      "id": "gta-6",
+      "name": "Grand Theft Auto VI",
+      "aka": ["GTA 6", "GTA VI", "GTA6"],
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "genres": ["action-adventure"],
+      "anticipation": 100,
+      "blurb": "Rockstar's open-world crime game is set in the state of Leonida, with a return to a modern Vice City. It launched worldwide on 19 November 2026 for PlayStation 5 and Xbox Series X|S. PlayStation's store page says it does not run on PlayStation 4. A PC date has not been announced.",
+      "facts": [
+        "Launch platforms are PlayStation 5 and Xbox Series X|S.",
+        "Trailers introduce Lucia and Jason in Leonida.",
+        "PC remains unannounced, so this calendar leaves it TBA."
+      ],
+      "delays": [
+        "The first trailer, published by Rockstar in December 2023, pointed to a 2025 window.",
+        "Rockstar later dated the game 26 May 2026.",
+        "On 6 November 2025 Rockstar moved the release to 19 November 2026, saying the extra months were for polish."
+      ],
+      "official": "https://www.rockstargames.com/VI/out-now",
+      "trailer": "https://www.youtube.com/watch?v=QdBZY2fkU-0",
+      "trailerTitle": "Grand Theft Auto VI Trailer 1",
+      "sources": [
+        {"name": "Rockstar Games", "url": "https://www.rockstargames.com/VI/out-now"},
+        {"name": "PlayStation", "url": "https://www.playstation.com/en-us/games/grand-theft-auto-vi/"},
+        {"name": "The Verge, on the November 2025 delay", "url": "https://www.theverge.com/news/816005/grand-theft-auto-vi-gta-g-delayed-november-2026"}
+      ],
+      "releases": [
+        {"date": "2026-11-19", "precision": "day", "confidence": "confirmed", "platforms": ["ps5", "xbox-series"], "kind": "release", "note": "Worldwide launch. No PC date announced."}
+      ]
+    },
+    {
+      "id": "fable",
+      "name": "Fable",
+      "aka": ["Fable reboot"],
+      "developer": "Playground Games",
+      "publisher": "Xbox Game Studios",
+      "genres": ["rpg", "action-adventure"],
+      "anticipation": 96,
+      "blurb": "Playground Games' new Fable is a fresh start in Albion, not a continuation of the Lionhead trilogy. The studio's FAQ dates the launch 23 February 2027 on Xbox Series X|S, Steam and PlayStation 5, with day-one access on Game Pass Ultimate. Premium and Collector's editions can start up to five days early, on 18 February 2027.",
+      "facts": [
+        "Playground says the Forza Horizon team is separate from the Fable team.",
+        "Choices and reputation are part of the public pitch.",
+        "Early access on 18 February 2027 is for premium editions, not the standard street date."
+      ],
+      "official": "https://www.fablethegame.com/en-US/news/fable-faq",
+      "sources": [
+        {"name": "Fable FAQ", "url": "https://www.fablethegame.com/en-US/news/fable-faq"},
+        {"name": "Xbox", "url": "https://www.xbox.com/en-US/games/fable"}
+      ],
+      "releases": [
+        {"date": "2027-02-23", "precision": "day", "confidence": "confirmed", "platforms": ["xbox-series", "pc", "ps5"], "kind": "release", "note": "Standard launch. Premium editions can play from 18 February 2027."}
+      ]
+    },
+    {
+      "id": "the-witcher-4",
+      "name": "The Witcher 4",
+      "aka": ["Witcher 4", "The Witcher IV"],
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "genres": ["rpg"],
+      "anticipation": 94,
+      "blurb": "CD Projekt Red's next main Witcher game does not have a release day. In November 2026 the studio's joint CEO described 2028 as the target window and asked players to wait. Public comments put Ciri in the lead role, with Geralt no longer the centre of the story. Treat 2028 as a window, not a date.",
+      "facts": [
+        "No day, month or platform lock-in beyond the platforms CD Projekt has shown the game for in public listings.",
+        "A Witcher 3 expansion, Songs of the Past, has been discussed separately for 2027 and is not given a day here."
+      ],
+      "sources": [
+        {"name": "Polygon, on the 2028 window", "url": "https://www.polygon.com/the-witcher-4-release-date-window-cd-projekt-red/"}
+      ],
+      "releases": [
+        {"date": "2028", "precision": "year", "confidence": "window", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Studio target window. Not a locked day."}
+      ]
+    },
+    {
+      "id": "the-duskbloods",
+      "name": "The Duskbloods",
+      "aka": ["Duskbloods"],
+      "developer": "FromSoftware",
+      "publisher": "FromSoftware",
+      "genres": ["action"],
+      "anticipation": 92,
+      "blurb": "FromSoftware's multiplayer action game is a Nintendo Switch 2 exclusive. Players become Bloodsworn and fight in online matches of up to eight people. Nintendo's store page lists 2027 and does not name a day. On 29 October 2026 the studio's Japanese site said the planned 2026 release had moved to 2027.",
+      "facts": [
+        "Online play needs a Nintendo Switch Online membership, according to Nintendo's store page.",
+        "The day inside 2027 is still TBA."
+      ],
+      "delays": [
+        "Planned for 2026.",
+        "On 29 October 2026 FromSoftware moved the release to 2027, without naming a day."
+      ],
+      "official": "https://www.nintendo.com/us/store/products/the-duskbloods-switch-2/",
+      "sources": [
+        {"name": "Nintendo eShop", "url": "https://www.nintendo.com/us/store/products/the-duskbloods-switch-2/"},
+        {"name": "The Duskbloods official site", "url": "https://www.theduskbloods.jp/index.html"}
+      ],
+      "releases": [
+        {"date": "2027", "precision": "year", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Year confirmed by Nintendo. Day is TBA."}
+      ]
+    },
+    {
+      "id": "marvels-wolverine",
+      "name": "Marvel's Wolverine",
+      "aka": ["Wolverine", "Marvel Wolverine"],
+      "developer": "Insomniac Games",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["action-adventure"],
+      "anticipation": 90,
+      "blurb": "Insomniac's Wolverine game is a PlayStation 5 action-adventure published by Sony. The public 2026 release list dates it 15 September 2026. It is a single-platform launch in that list, with no Xbox, Switch or PC date recorded here.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-09-15", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "release", "note": "PS5 launch listed for this day."}
+      ]
+    },
+    {
+      "id": "phantom-blade-zero",
+      "name": "Phantom Blade Zero",
+      "aka": ["Phantom Blade 0"],
+      "developer": "S-GAME",
+      "publisher": "S-GAME",
+      "genres": ["action", "rpg"],
+      "anticipation": 88,
+      "blurb": "S-GAME's action RPG Phantom Blade Zero is dated 29 October 2026 for PC and PlayStation 5 in the public 2026 release list. No Xbox or Switch version is recorded on this page. The list credits S-GAME and does not name a separate publisher.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-10-29", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5"], "kind": "release", "note": "PC and PS5."}
+      ]
+    },
+    {
+      "id": "pragmata",
+      "name": "Pragmata",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "genres": ["action-adventure"],
+      "anticipation": 86,
+      "blurb": "Capcom's science-fiction action-adventure Pragmata is dated 17 April 2026. The public release list puts it on PC, Switch 2, PlayStation 5 and Xbox Series X|S. Marketing ahead of launch centred on a young girl and an android companion.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-17", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "forza-horizon-6",
+      "name": "Forza Horizon 6",
+      "aka": ["Forza Horizon VI", "FH6"],
+      "developer": "Playground Games",
+      "publisher": "Xbox Game Studios",
+      "genres": ["racing"],
+      "anticipation": 84,
+      "blurb": "Playground's open-world racer launched on 19 May 2026 for PC and Xbox Series X|S, in the public 2026 release list. A PlayStation 5 version is listed by later calendars for 26 January 2027. That PS5 day is marked scheduled, because this page has not opened a Sony announcement for it.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"},
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2026-05-19", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "xbox-series"], "kind": "release", "note": "PC and Xbox launch."},
+        {"date": "2027-01-26", "precision": "day", "confidence": "scheduled", "platforms": ["ps5"], "kind": "port", "note": "PS5 date from public calendars."}
+      ]
+    },
+    {
+      "id": "007-first-light",
+      "name": "007 First Light",
+      "aka": ["James Bond First Light", "First Light"],
+      "developer": "IO Interactive",
+      "publisher": "IO Interactive",
+      "genres": ["action-adventure"],
+      "anticipation": 82,
+      "blurb": "IO Interactive's James Bond game 007 First Light is dated 27 May 2026 for PC, PlayStation 5 and Xbox Series X|S in the public 2026 list. Calendars place a Switch 2 version later, on 18 March 2027. The Switch 2 day is scheduled rather than confirmed on a Nintendo page this site opened.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"},
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2026-05-27", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Initial platforms."},
+        {"date": "2027-03-18", "precision": "day", "confidence": "scheduled", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 date from public calendars."}
+      ]
+    },
+    {
+      "id": "pokemon-pokopia",
+      "name": "Pokémon Pokopia",
+      "aka": ["Pokemon Pokopia", "Pokopia"],
+      "developer": "Game Freak, Omega Force",
+      "publisher": "The Pokémon Company, Nintendo",
+      "genres": ["simulation"],
+      "anticipation": 80,
+      "blurb": "Pokémon Pokopia is a Switch 2 life-sim and sandbox dated 5 March 2026. The public list credits Game Freak and Omega Force as developers, with The Pokémon Company and Nintendo as publishers depending on region. It is a new game, not a port of an older Pokémon title.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-05", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "zelda-ocarina-of-time",
+      "name": "The Legend of Zelda: Ocarina of Time",
+      "aka": ["Ocarina of Time Switch 2", "Zelda Ocarina of Time remake"],
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "genres": ["action-adventure"],
+      "anticipation": 78,
+      "blurb": "Nintendo's Switch 2 remake of The Legend of Zelda: Ocarina of Time is dated 5 November 2026, developed by Nintendo EPD. The 2026 Metacritic roundup lists it among the highest-scored games of the year. This page is about that remake, not the 1998 Nintendo 64 original.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"},
+        {"name": "Wikipedia, 2026 in video games", "url": "https://en.wikipedia.org/wiki/2026_in_video_games"}
+      ],
+      "releases": [
+        {"date": "2026-11-05", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2 remake."}
+      ]
+    },
+    {
+      "id": "resident-evil-requiem",
+      "name": "Resident Evil Requiem",
+      "aka": ["Resident Evil 9", "RE9"],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "genres": ["horror"],
+      "anticipation": 76,
+      "blurb": "Resident Evil Requiem is Capcom's survival-horror release dated 27 February 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. Some coverage also calls it Resident Evil 9. The public 2026 list uses the title Resident Evil Requiem.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-27", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "crimson-desert",
+      "name": "Crimson Desert",
+      "developer": "Pearl Abyss",
+      "publisher": "Pearl Abyss",
+      "genres": ["action-adventure"],
+      "anticipation": 74,
+      "blurb": "Pearl Abyss's open-world action-adventure Crimson Desert is dated 19 March 2026 for PC, Mac, PlayStation 5 and Xbox Series X|S. This calendar files the PC, PlayStation 5 and Xbox versions. Mac is noted but has no separate page.",
+      "facts": ["The public list also includes macOS alongside Windows."],
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-19", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Also listed for Mac."}
+      ]
+    },
+    {
+      "id": "metroid-ravenous",
+      "name": "Metroid Ravenous",
+      "aka": ["Metroid: Ravenous"],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "genres": ["action-adventure"],
+      "anticipation": 72,
+      "blurb": "Metroid Ravenous is listed for 28 January 2027 on Switch 2 by several public release calendars. This page has not opened a Nintendo direct announcement for that day, so the date stays scheduled and can still move. No other platform is listed.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-01-28", "precision": "day", "confidence": "scheduled", "platforms": ["switch-2"], "kind": "release", "note": "Date from public calendars, not a Nintendo page opened for this entry."}
+      ]
+    },
+    {
+      "id": "tomb-raider-legacy-of-atlantis",
+      "name": "Tomb Raider: Legacy of Atlantis",
+      "aka": ["Legacy of Atlantis"],
+      "developer": "Crystal Dynamics",
+      "publisher": "Crystal Dynamics",
+      "genres": ["action-adventure"],
+      "anticipation": 70,
+      "blurb": "Tomb Raider: Legacy of Atlantis is listed for 12 February 2027 on PlayStation 5, Xbox Series X|S, Switch 2 and PC. Public calendars agree on that day. This page marks it scheduled, because a publisher press page was not the source opened for the date. Crystal Dynamics is the studio publicly tied to the listing.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-02-12", "precision": "day", "confidence": "scheduled", "platforms": ["ps5", "xbox-series", "switch-2", "pc"], "kind": "release", "note": "Calendar date. Can still move."}
+      ]
+    },
+    {
+      "id": "gears-of-war-e-day",
+      "name": "Gears of War: E-Day",
+      "aka": ["Gears E-Day", "E-Day"],
+      "developer": "The Coalition, People Can Fly",
+      "publisher": "Xbox Game Studios",
+      "genres": ["shooter"],
+      "anticipation": 68,
+      "blurb": "Gears of War: E-Day is a new third-person shooter dated 6 October 2026 for PC and Xbox Series X|S. The public list credits The Coalition and People Can Fly, published by Xbox Game Studios. No PlayStation or Switch date is recorded here.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-10-06", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "xbox-series"], "kind": "release", "note": "PC and Xbox."}
+      ]
+    },
+    {
+      "id": "intergalactic",
+      "name": "Intergalactic: The Heretic Prophet",
+      "aka": ["Intergalactic"],
+      "developer": "Naughty Dog",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["action-adventure"],
+      "anticipation": 66,
+      "blurb": "Naughty Dog's announced PlayStation 5 action-adventure Intergalactic: The Heretic Prophet does not have a public release date. It stays TBA on this calendar. No year is assigned, even where roundups guess at one.",
+      "sources": [
+        {"name": "GamesRadar, undated announced games", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"precision": "none", "confidence": "tba", "platforms": ["ps5"], "kind": "release", "note": "Announced. No date."}
+      ]
+    },
+    {
+      "id": "persona-4-revival",
+      "name": "Persona 4 Revival",
+      "aka": ["Persona 4 Remake"],
+      "developer": "Atlus",
+      "publisher": "Sega",
+      "genres": ["rpg"],
+      "anticipation": 64,
+      "blurb": "Persona 4 Revival is listed for 18 February 2027 on PC, PlayStation 5 and Xbox Series X|S, with a Switch 2 date of 20 May 2027 on the same public calendars. Both days are marked scheduled. Atlus is the series developer and Sega the usual publisher.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-02-18", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Initial platforms on public calendars."},
+        {"date": "2027-05-20", "precision": "day", "confidence": "scheduled", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 date from public calendars."}
+      ]
+    },
+    {
+      "id": "the-elder-scrolls-vi",
+      "name": "The Elder Scrolls VI",
+      "aka": ["Elder Scrolls 6", "TES 6", "TES VI"],
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda Softworks",
+      "genres": ["rpg"],
+      "anticipation": 62,
+      "blurb": "Bethesda's next main Elder Scrolls game is announced and undated. This calendar does not give it a year, and it does not use an unconfirmed subtitle. Platforms are not locked here either, so the game stays TBA until Bethesda names a day.",
+      "sources": [
+        {"name": "GamesRadar, undated announced games", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"precision": "none", "confidence": "tba", "platforms": [], "kind": "release", "note": "Announced. No date and no platform list confirmed on this page."}
+      ]
+    },
+    {
+      "id": "hollow-knight-silksong",
+      "name": "Hollow Knight: Silksong",
+      "aka": ["Silksong"],
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "genres": ["action-adventure", "platformer"],
+      "anticipation": 60,
+      "blurb": "Team Cherry's sequel sends Hornet through a haunted kingdom. Nintendo's news post and Steam both date the release 4 September 2025. The launch trailer lists PC, Switch, Switch 2, Xbox, PlayStation 4 and PlayStation 5. It is filed here as a late-2025 release people still look up.",
+      "official": "https://www.nintendo.com/us/whatsnew/hollow-knight-silksong-is-now-available-explore-a-vast-haunted-kingdom/",
+      "trailer": "https://www.youtube.com/watch?v=6XGeJwsUP9c",
+      "trailerTitle": "Hollow Knight: Silksong release trailer",
+      "sources": [
+        {"name": "Nintendo", "url": "https://www.nintendo.com/us/whatsnew/hollow-knight-silksong-is-now-available-explore-a-vast-haunted-kingdom/"},
+        {"name": "Steam", "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"}
+      ],
+      "releases": [
+        {"date": "2025-09-04", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "xbox-series", "ps5"], "kind": "release", "note": "Also on PlayStation 4 and Xbox One."}
+      ]
+    },
+    {
+      "id": "ghost-of-yotei",
+      "name": "Ghost of Yōtei",
+      "aka": ["Ghost of Yotei"],
+      "developer": "Sucker Punch Productions",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["action-adventure"],
+      "anticipation": 58,
+      "blurb": "Sucker Punch's follow-up to Ghost of Tsushima launched on PlayStation 5 on 2 October 2025. Sony's launch announcement describes Atsu, a mercenary in 17th-century Ezo. It is a PS5 game on that announcement, with standard and higher-priced editions named the same day.",
+      "official": "https://sonyinteractive.com/en/press-releases/2025/journey-across-the-northern-edge-of-17th-century-japan-in-ghost-of-yotei-out-now-on-playstation-5/",
+      "sources": [
+        {"name": "Sony Interactive Entertainment", "url": "https://sonyinteractive.com/en/press-releases/2025/journey-across-the-northern-edge-of-17th-century-japan-in-ghost-of-yotei-out-now-on-playstation-5/"},
+        {"name": "PlayStation Blog", "url": "https://blog.playstation.com/2025/04/23/ghost-of-yotei-comes-to-playstation-5-on-october-2/"}
+      ],
+      "releases": [
+        {"date": "2025-10-02", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "release", "note": "PS5 launch."}
+      ]
+    },
+    {
+      "id": "marathon",
+      "name": "Marathon",
+      "developer": "Bungie",
+      "publisher": "Bungie",
+      "genres": ["shooter"],
+      "anticipation": 56,
+      "blurb": "Bungie's extraction shooter Marathon launched on 5 March 2026 for PC, PlayStation 5 and Xbox Series X|S, according to the public 2026 release list. It is a new multiplayer game under the Marathon name. This page does not track later live-service changes.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-05", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "saros",
+      "name": "Saros",
+      "developer": "Housemarque",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["action"],
+      "anticipation": 54,
+      "blurb": "Saros is Housemarque's PlayStation 5 action game, published by Sony and dated 30 April 2026 in the public release list. The list gives it no other platform. Housemarque's earlier PS5 work includes Returnal, which is context for the studio, not a claim that Saros plays the same way.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-30", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "release", "note": "PS5."}
+      ]
+    },
+    {
+      "id": "kingdom-hearts-4",
+      "name": "Kingdom Hearts IV",
+      "aka": ["Kingdom Hearts 4", "KH4"],
+      "developer": "Square Enix",
+      "publisher": "Square Enix",
+      "genres": ["action", "rpg"],
+      "anticipation": 52,
+      "blurb": "Kingdom Hearts IV is announced and still undated on this calendar. Public roundups mention PC, PlayStation 5, Switch 2 and Xbox Series X|S, but they do not share a locked year. No day is invented here. The game stays TBA until Square Enix names one.",
+      "sources": [
+        {"name": "GamesRadar, undated announced games", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"precision": "none", "confidence": "tba", "platforms": ["pc", "ps5", "switch-2", "xbox-series"], "kind": "release", "note": "Platforms from public listings. No year confirmed here."}
+      ]
+    },
+    {
+      "id": "judas",
+      "name": "Judas",
+      "developer": "Ghost Story Games",
+      "publisher": "Ghost Story Games",
+      "genres": ["shooter", "action-adventure"],
+      "anticipation": 50,
+      "blurb": "Judas, from Ghost Story Games, is announced without a release day. Public listings pair it with PC and Xbox Series X|S and do not give a year this page is willing to lock. It stays TBA. No story details are repeated here beyond the fact of the announcement.",
+      "sources": [
+        {"name": "GamesRadar, undated announced games", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"precision": "none", "confidence": "tba", "platforms": ["pc", "xbox-series"], "kind": "release", "note": "Announced. No date."}
+      ]
+    },
+    {
+      "id": "borderlands-4",
+      "name": "Borderlands 4",
+      "developer": "Gearbox Software",
+      "publisher": "2K",
+      "genres": ["shooter"],
+      "blurb": "Gearbox and 2K announced Borderlands 4 for 12 September 2025, set on the planet Kairos. The publisher's news post calls that the launch day. Public calendars list PC, PlayStation 5 and Xbox Series X|S. A Switch 2 edition is not confirmed on the 2K post this page used, so it is left off.",
+      "official": "https://borderlands.2k.com/borderlands-4/news/september-12-launch-date-trailer/",
+      "sources": [
+        {"name": "Borderlands / 2K", "url": "https://borderlands.2k.com/borderlands-4/news/september-12-launch-date-trailer/"}
+      ],
+      "releases": [
+        {"date": "2025-09-12", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Launch day announced by 2K."}
+      ]
+    },
+    {
+      "id": "pokemon-legends-z-a",
+      "name": "Pokémon Legends: Z-A",
+      "aka": ["Pokemon Legends Z-A", "Legends Z-A"],
+      "developer": "Game Freak",
+      "publisher": "Nintendo, The Pokémon Company",
+      "genres": ["rpg"],
+      "blurb": "Pokémon Legends: Z-A launched on 16 October 2025 for Nintendo Switch and Switch 2. The Pokémon Company's press release that day says trainers and Pokémon move in real time, with moves used on command. A May 2025 news post had already named 16 October as the date.",
+      "official": "https://press.pokemon.com/en/Pokemon-Legends-Z-A-Available-Now",
+      "sources": [
+        {"name": "The Pokémon Company", "url": "https://press.pokemon.com/en/Pokemon-Legends-Z-A-Available-Now"},
+        {"name": "Pokémon Legends site", "url": "https://legends.pokemon.com/en-us/news/release-date"}
+      ],
+      "releases": [
+        {"date": "2025-10-16", "precision": "day", "confidence": "confirmed", "platforms": ["switch", "switch-2"], "kind": "release", "note": "Switch and Switch 2."}
+      ]
+    },
+    {
+      "id": "kingdom-come-deliverance-ii",
+      "name": "Kingdom Come: Deliverance II",
+      "aka": ["Kingdom Come Deliverance 2", "KCD2"],
+      "developer": "Warhorse Studios",
+      "publisher": "Deep Silver",
+      "genres": ["rpg"],
+      "blurb": "Warhorse's medieval role-playing sequel Kingdom Come: Deliverance II is dated 4 February 2025 for PC, PlayStation 5 and Xbox Series X|S on release calendars that were still current after that day. It is the follow-up to the 2018 Bohemia RPG. A Switch 2 version is not given a day here.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-02-04", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "PC, PS5 and Xbox."}
+      ]
+    },
+    {
+      "id": "civilization-vii",
+      "name": "Civilization VII",
+      "aka": ["Civ 7", "Civilization 7"],
+      "developer": "Firaxis Games",
+      "publisher": "2K",
+      "genres": ["strategy"],
+      "blurb": "Firaxis's strategy game Civilization VII is dated 11 February 2025 for PC, PlayStation, Xbox and Switch on the 2025 calendars that still listed it after launch month. This page records PC, PlayStation 5, Xbox Series X|S and Switch. Older consoles were also named in those listings.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-02-11", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series", "switch"], "kind": "release", "note": "Also listed for PlayStation 4 and Xbox One."}
+      ]
+    },
+    {
+      "id": "monster-hunter-wilds",
+      "name": "Monster Hunter Wilds",
+      "aka": ["MH Wilds"],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "genres": ["action", "rpg"],
+      "blurb": "Capcom's Monster Hunter Wilds launched on 28 February 2025 for PC, PlayStation 5 and Xbox Series X|S. A Switch 2 port is dated 4 December 2026 in the public 2026 release list. The December date is the port, not a delay of the original game.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"},
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2025-02-28", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Original launch."},
+        {"date": "2026-12-04", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 port."}
+      ]
+    },
+    {
+      "id": "clair-obscur-expedition-33",
+      "name": "Clair Obscur: Expedition 33",
+      "aka": ["Expedition 33"],
+      "developer": "Sandfall Interactive",
+      "publisher": "Kepler Interactive",
+      "genres": ["rpg"],
+      "blurb": "Clair Obscur: Expedition 33 is Sandfall Interactive's turn-based RPG, published by Kepler Interactive and dated 24 April 2025 for PC, PlayStation 5 and Xbox Series X|S. It stayed on 2025 calendars after that month, which is the basis for the date here.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-04-24", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "PC, PS5 and Xbox."}
+      ]
+    },
+    {
+      "id": "doom-the-dark-ages",
+      "name": "Doom: The Dark Ages",
+      "aka": ["Doom The Dark Ages"],
+      "developer": "id Software",
+      "publisher": "Bethesda Softworks",
+      "genres": ["shooter"],
+      "blurb": "id Software's medieval-set Doom prequel, Doom: The Dark Ages, is dated 15 May 2025 for PC, PlayStation 5 and Xbox Series X|S. Bethesda Softworks is the publisher. A later story expansion, Revelations, shipped in July 2026 and is not the main date on this page.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-05-15", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Base game launch."}
+      ]
+    },
+    {
+      "id": "mario-kart-world",
+      "name": "Mario Kart World",
+      "aka": ["Mario Kart 9"],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "genres": ["racing"],
+      "blurb": "Mario Kart World is Nintendo's Switch 2 racing game, dated 5 June 2025 on 2025 release calendars that still showed the date after it had passed. It is filed as a Switch 2 game only. No backwards-compatible Switch release is listed here.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-06-05", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "death-stranding-2",
+      "name": "Death Stranding 2: On the Beach",
+      "aka": ["Death Stranding 2", "DS2"],
+      "developer": "Kojima Productions",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["action-adventure"],
+      "blurb": "Kojima Productions' sequel launched on PlayStation 5 on 26 June 2025, the date carried on 2025 calendars after that month. The Windows version is a later port, dated 19 March 2026 in the public 2026 release list. Sony Interactive Entertainment is the publisher on that list.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"},
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2025-06-26", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "release", "note": "PS5 launch."},
+        {"date": "2026-03-19", "precision": "day", "confidence": "confirmed", "platforms": ["pc"], "kind": "port", "note": "Windows port."}
+      ]
+    },
+    {
+      "id": "donkey-kong-bananza",
+      "name": "Donkey Kong Bananza",
+      "aka": ["DK Bananza"],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "genres": ["platformer"],
+      "blurb": "Donkey Kong Bananza is Nintendo's 3D Donkey Kong adventure for Switch 2, dated 17 July 2025. It did not slide into the 2026 release list, which is why the July 2025 day is kept. No other platform is recorded here.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"}
+      ],
+      "releases": [
+        {"date": "2025-07-17", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "hytale",
+      "name": "Hytale",
+      "developer": "Hypixel Studios",
+      "publisher": "Hypixel Studios",
+      "genres": ["survival", "simulation"],
+      "blurb": "Hytale, the sandbox from Hypixel Studios, entered early access on 13 January 2026 for Windows, Mac and Linux. This page files the PC early-access date. A full 1.0 day is not listed, so the game stays marked as early access rather than a finished launch.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-01-13", "precision": "day", "confidence": "confirmed", "platforms": ["pc"], "kind": "early-access", "note": "Early access on Windows, Mac and Linux."}
+      ]
+    },
+    {
+      "id": "animal-crossing-switch-2",
+      "name": "Animal Crossing: New Horizons Switch 2 Edition",
+      "aka": ["Animal Crossing New Horizons Switch 2", "ACNH Switch 2"],
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "genres": ["simulation"],
+      "blurb": "The Switch 2 edition of Animal Crossing: New Horizons is a Nintendo EPD remaster dated 15 January 2026. It is an edition of the 2020 game, not a new numbered Animal Crossing. The public list gives it to Switch 2 only.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-01-15", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 edition of the 2020 game."}
+      ]
+    },
+    {
+      "id": "final-fantasy-vii-remake-intergrade",
+      "name": "Final Fantasy VII Remake Intergrade",
+      "aka": ["FF7 Remake Intergrade"],
+      "developer": "Square Enix",
+      "publisher": "Square Enix",
+      "genres": ["rpg", "action"],
+      "blurb": "Final Fantasy VII Remake Intergrade reached Switch 2 and Xbox Series X|S on 22 January 2026 as a port. Square Enix is both developer and publisher on the public list. The original Intergrade release on other platforms is older and is not the date used here.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-01-22", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2", "xbox-series"], "kind": "port", "note": "Switch 2 and Xbox port."}
+      ]
+    },
+    {
+      "id": "dragon-quest-vii-reimagined",
+      "name": "Dragon Quest VII Reimagined",
+      "aka": ["Dragon Quest 7 Reimagined", "DQ7"],
+      "developer": "Square Enix",
+      "publisher": "Square Enix",
+      "genres": ["rpg"],
+      "blurb": "Dragon Quest VII Reimagined is Square Enix's remake, dated 5 February 2026 for PC, Switch, Switch 2, PlayStation 5 and Xbox Series X|S. It is a new version of the older role-playing game, not a brand-new numbered entry.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-05", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Remake."}
+      ]
+    },
+    {
+      "id": "yakuza-kiwami-3",
+      "name": "Yakuza Kiwami 3 and Dark Ties",
+      "aka": ["Yakuza Kiwami 3", "Like a Dragon Kiwami 3"],
+      "developer": "Ryu Ga Gotoku Studio",
+      "publisher": "Sega",
+      "genres": ["action-adventure"],
+      "blurb": "Yakuza Kiwami 3 and Dark Ties is Ryu Ga Gotoku Studio's remake package, published by Sega on 12 February 2026. The public list includes PC, Switch 2, PlayStation 4, PlayStation 5 and Xbox Series X|S. Dark Ties is the new story paired with the remake.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-12", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Also on PlayStation 4. Includes the new Dark Ties story."}
+      ]
+    },
+    {
+      "id": "mario-tennis-fever",
+      "name": "Mario Tennis Fever",
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "genres": ["sports"],
+      "blurb": "Mario Tennis Fever is a new Nintendo sports game for Switch 2, dated 12 February 2026. The public list credits Nintendo and does not add another platform. It is a tennis game, separate from Mario Kart World.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-12", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "reanimal",
+      "name": "Reanimal",
+      "developer": "Tarsier Studios",
+      "publisher": "THQ Nordic",
+      "genres": ["horror"],
+      "blurb": "Reanimal is Tarsier Studios' horror adventure, published by THQ Nordic on 13 February 2026. Platforms in the public list are PC, Switch 2, PlayStation 5 and Xbox Series X|S. Tarsier is the studio behind Little Nightmares, which is studio context rather than a plot summary.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-13", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "high-on-life-2",
+      "name": "High on Life 2",
+      "developer": "Squanch Games",
+      "publisher": "Squanch Games",
+      "genres": ["shooter"],
+      "blurb": "High on Life 2 is Squanch Games' comedy shooter sequel, dated 13 February 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. The public list does not name a separate publisher. It is a follow-up to the 2022 game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-02-13", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "avowed",
+      "name": "Avowed",
+      "developer": "Obsidian Entertainment",
+      "publisher": "Xbox Game Studios",
+      "genres": ["rpg"],
+      "blurb": "Obsidian's fantasy RPG Avowed first launched on 18 February 2025 for PC and Xbox Series X|S. The PlayStation 5 version is a later port, dated 17 February 2026 in the public 2026 list. Xbox Game Studios publishes it.",
+      "sources": [
+        {"name": "Destructoid 2025 calendar", "url": "https://www.destructoid.com/2025-video-game-release-date-calendar/"},
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2025-02-18", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "xbox-series"], "kind": "release", "note": "Original launch."},
+        {"date": "2026-02-17", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "port", "note": "PS5 port."}
+      ]
+    },
+    {
+      "id": "fatal-frame-2-remake",
+      "name": "Fatal Frame II: Crimson Butterfly Remake",
+      "aka": ["Fatal Frame 2 remake", "Project Zero 2 remake"],
+      "developer": "Team Ninja",
+      "publisher": "Koei Tecmo",
+      "genres": ["horror"],
+      "blurb": "Team Ninja's remake of Fatal Frame II: Crimson Butterfly is dated 12 March 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. Koei Tecmo publishes it. It is a remake of the 2003 horror game, also known as Project Zero in some regions.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-12", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Remake."}
+      ]
+    },
+    {
+      "id": "monster-hunter-stories-3",
+      "name": "Monster Hunter Stories 3: Twisted Reflection",
+      "aka": ["Monster Hunter Stories 3"],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "genres": ["rpg"],
+      "blurb": "Monster Hunter Stories 3: Twisted Reflection is Capcom's role-playing follow-up in the Stories series, dated 13 March 2026. Platforms in the public list are PC, Switch 2, PlayStation 5 and Xbox Series X|S. It is a turn-based RPG spinoff, not the mainline Wilds game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-13", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "RPG spinoff."}
+      ]
+    },
+    {
+      "id": "slay-the-spire-2",
+      "name": "Slay the Spire II",
+      "aka": ["Slay the Spire 2"],
+      "developer": "Mega Crit",
+      "publisher": "Mega Crit",
+      "genres": ["strategy"],
+      "blurb": "Mega Crit's deck-building sequel Slay the Spire II entered early access on 5 March 2026 for PC, including Mac and Linux in the public list. A 1.0 date is not on this page. Console versions are not dated here.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-03-05", "precision": "day", "confidence": "confirmed", "platforms": ["pc"], "kind": "early-access", "note": "PC early access. Mac and Linux included in the source list."}
+      ]
+    },
+    {
+      "id": "starfield",
+      "name": "Starfield",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda Softworks",
+      "genres": ["rpg"],
+      "blurb": "Starfield's PlayStation 5 version arrived on 7 April 2026 as a port of Bethesda's 2023 role-playing game. The public list credits Bethesda Game Studios and Bethesda Softworks. The date on this page is the PS5 release, not the original Xbox and PC launch.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-07", "precision": "day", "confidence": "confirmed", "platforms": ["ps5"], "kind": "port", "note": "PS5 port of the 2023 game."}
+      ]
+    },
+    {
+      "id": "pokemon-champions",
+      "name": "Pokémon Champions",
+      "aka": ["Pokemon Champions"],
+      "developer": "The Pokémon Works",
+      "publisher": "Nintendo, The Pokémon Company",
+      "genres": ["strategy"],
+      "blurb": "Pokémon Champions is a tactical game from The Pokémon Works, dated 8 April 2026 on Nintendo Switch in the public list, with Nintendo and The Pokémon Company publishing by region. A mobile version is dated 17 June 2026. Switch 2 is not a separate row in the list this page followed.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-08", "precision": "day", "confidence": "confirmed", "platforms": ["switch"], "kind": "release", "note": "Nintendo Switch."},
+        {"date": "2026-06-17", "precision": "day", "confidence": "confirmed", "platforms": ["mobile"], "kind": "port", "note": "iOS and Android."}
+      ]
+    },
+    {
+      "id": "tomodachi-life",
+      "name": "Tomodachi Life: Living the Dream",
+      "aka": ["Tomodachi Life Switch"],
+      "developer": "Nintendo",
+      "publisher": "Nintendo",
+      "genres": ["simulation"],
+      "blurb": "Tomodachi Life: Living the Dream is Nintendo's new social sim, dated 16 April 2026 for Nintendo Switch in the public release list. The list this page follows does not add Switch 2 as its own platform. It is a follow-up to the 3DS game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-16", "precision": "day", "confidence": "confirmed", "platforms": ["switch"], "kind": "release", "note": "Nintendo Switch, per the 2026 release list."}
+      ]
+    },
+    {
+      "id": "hades-ii",
+      "name": "Hades II",
+      "aka": ["Hades 2"],
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "genres": ["action", "rpg"],
+      "blurb": "Supergiant's roguelike Hades II reached PlayStation 5 and Xbox Series X|S on 14 April 2026 as a port. The PC version was already out before that console date, and this page does not restate an earlier PC day it has not rechecked. The April date is the console release.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-14", "precision": "day", "confidence": "confirmed", "platforms": ["ps5", "xbox-series"], "kind": "port", "note": "Console port. PC was already available."}
+      ]
+    },
+    {
+      "id": "diablo-iv-lord-of-hatred",
+      "name": "Diablo IV: Lord of Hatred",
+      "aka": ["Diablo 4 Lord of Hatred", "Lord of Hatred"],
+      "developer": "Blizzard Entertainment",
+      "publisher": "Blizzard Entertainment",
+      "genres": ["action", "rpg"],
+      "blurb": "Lord of Hatred is a Diablo IV expansion from Blizzard, dated 28 April 2026. The public list includes PC, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X|S. This page records the current-generation consoles and PC, and notes the older consoles in the row.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-28", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "expansion", "note": "Also on PlayStation 4 and Xbox One."}
+      ]
+    },
+    {
+      "id": "invincible-vs",
+      "name": "Invincible VS",
+      "aka": ["Invincible Versus"],
+      "developer": "Quarter Up",
+      "publisher": "Skybound Games",
+      "genres": ["fighting"],
+      "blurb": "Invincible VS is a fighting game from Quarter Up, published by Skybound Games on 30 April 2026. Platforms in the public list are PC, PlayStation 5 and Xbox Series X|S. It is based on the Invincible series and is a versus fighter rather than an action-adventure adaptation.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-04-30", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Fighting game."}
+      ]
+    },
+    {
+      "id": "subnautica-2",
+      "name": "Subnautica 2",
+      "developer": "Unknown Worlds Entertainment",
+      "publisher": "Unknown Worlds Entertainment, Krafton",
+      "genres": ["survival"],
+      "blurb": "Subnautica 2 entered early access on 14 May 2026 for PC and Xbox Series X|S. The public list credits Unknown Worlds, with Krafton also named as a publisher. A full 1.0 date is not on this page, so the entry stays early access.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-05-14", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "xbox-series"], "kind": "early-access", "note": "Early access. Full release not dated here."}
+      ]
+    },
+    {
+      "id": "indiana-jones-switch-2",
+      "name": "Indiana Jones and the Great Circle",
+      "aka": ["Indiana Jones Great Circle"],
+      "developer": "MachineGames",
+      "publisher": "Bethesda Softworks",
+      "genres": ["action-adventure"],
+      "blurb": "MachineGames' Indiana Jones adventure reached Switch 2 on 12 May 2026 as a port, published by Bethesda Softworks. The public 2026 list marks that day as a port, so earlier PC, Xbox and PlayStation releases are not restated with dates this page has not rechecked.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-05-12", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 port."}
+      ]
+    },
+    {
+      "id": "mina-the-hollower",
+      "name": "Mina the Hollower",
+      "developer": "Yacht Club Games",
+      "publisher": "Yacht Club Games",
+      "genres": ["action-adventure", "platformer"],
+      "blurb": "Mina the Hollower is Yacht Club Games' action-adventure, dated 29 May 2026. The year's Metacritic roundup lists PC, Switch, Switch 2, PlayStation 4 and 5, and Xbox One and Series X|S, with a score of 90. This page records the current platforms and notes the older consoles.",
+      "sources": [
+        {"name": "Wikipedia, 2026 in video games", "url": "https://en.wikipedia.org/wiki/2026_in_video_games"}
+      ],
+      "releases": [
+        {"date": "2026-05-29", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Also on PlayStation 4 and Xbox One."}
+      ]
+    },
+    {
+      "id": "final-fantasy-vii-rebirth",
+      "name": "Final Fantasy VII Rebirth",
+      "aka": ["FF7 Rebirth"],
+      "developer": "Square Enix",
+      "publisher": "Square Enix",
+      "genres": ["rpg", "action"],
+      "blurb": "Final Fantasy VII Rebirth reached Switch 2 and Xbox Series X|S on 3 June 2026 as a port. Square Enix developed and published it. The date here is that port, not the earlier PlayStation 5 release of the same game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-06-03", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2", "xbox-series"], "kind": "port", "note": "Switch 2 and Xbox port."}
+      ]
+    },
+    {
+      "id": "star-fox",
+      "name": "Star Fox",
+      "aka": ["Star Fox Switch 2"],
+      "developer": "Velan Studios",
+      "publisher": "Nintendo",
+      "genres": ["shooter"],
+      "blurb": "A Switch 2 remake of Star Fox, developed by Velan Studios and published by Nintendo, is dated 25 June 2026. The public list calls it a rail shooter remake and gives it no other platform. It is not the 1993 original and not Star Fox Adventures, which has its own later port.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-06-25", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2 remake."}
+      ]
+    },
+    {
+      "id": "splatoon-raiders",
+      "name": "Splatoon Raiders",
+      "developer": "Nintendo EPD",
+      "publisher": "Nintendo",
+      "genres": ["shooter"],
+      "blurb": "Splatoon Raiders is a new third-person game from Nintendo EPD for Switch 2, dated 23 July 2026. Nintendo publishes it. The public list does not add another platform. It sits beside the older Splatoon games rather than replacing their dates.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-07-23", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "assassins-creed-black-flag-resynced",
+      "name": "Assassin's Creed Black Flag Resynced",
+      "aka": ["Black Flag Resynced", "Assassins Creed Black Flag remake"],
+      "developer": "Ubisoft Singapore",
+      "publisher": "Ubisoft",
+      "genres": ["action-adventure"],
+      "blurb": "Assassin's Creed Black Flag Resynced is Ubisoft Singapore's remake of the pirate adventure, dated 9 July 2026 for PC, PlayStation 5 and Xbox Series X|S. Ubisoft publishes it. It is a remake, so the 2013 original is a different release.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-07-09", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Remake."}
+      ]
+    },
+    {
+      "id": "halo-campaign-evolved",
+      "name": "Halo: Campaign Evolved",
+      "aka": ["Halo Campaign Evolved"],
+      "developer": "Halo Studios",
+      "publisher": "Xbox Game Studios",
+      "genres": ["shooter"],
+      "blurb": "Halo: Campaign Evolved is a Halo Studios remake dated 28 July 2026 for PC, PlayStation 5 and Xbox Series X|S. Xbox Game Studios publishes it. The public list calls it a remake and a first-person shooter, and this page does not treat it as a new numbered Halo campaign beyond that credit.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-07-28", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Remake on PC, PS5 and Xbox."}
+      ]
+    },
+    {
+      "id": "palworld",
+      "name": "Palworld",
+      "developer": "Pocketpair",
+      "publisher": "Pocketpair",
+      "genres": ["survival", "action"],
+      "blurb": "Pocketpair's creature-collecting survival game Palworld left early access with a full release on 10 July 2026. The public list includes PC, PlayStation 5, Xbox One and Xbox Series X|S. The July date is the 1.0 launch, not the original early-access day.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-07-10", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "full-release", "note": "Version 1.0. Also listed for Xbox One."}
+      ]
+    },
+    {
+      "id": "marvel-tokon",
+      "name": "Marvel Tōkon: Fighting Souls",
+      "aka": ["Marvel Tokon", "Tokon Fighting Souls"],
+      "developer": "Arc System Works",
+      "publisher": "Sony Interactive Entertainment",
+      "genres": ["fighting"],
+      "blurb": "Marvel Tōkon: Fighting Souls is Arc System Works' Marvel fighting game, published by Sony and dated 6 August 2026 for PC and PlayStation 5. The public list does not add Xbox or Switch. The title is sometimes shortened to Marvel Tokon.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-08-06", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5"], "kind": "release", "note": "PC and PS5."}
+      ]
+    },
+    {
+      "id": "big-walk",
+      "name": "Big Walk",
+      "developer": "House House",
+      "publisher": "Panic",
+      "genres": ["simulation"],
+      "blurb": "Big Walk is the new game from House House, the studio behind Untitled Goose Game, published by Panic on 4 August 2026. The Metacritic roundup for 2026 lists PC, Mac, Switch 2 and PlayStation 5, with a score of 91. This page records PC, Switch 2 and PlayStation 5 and notes Mac.",
+      "sources": [
+        {"name": "Wikipedia, 2026 in video games", "url": "https://en.wikipedia.org/wiki/2026_in_video_games"}
+      ],
+      "releases": [
+        {"date": "2026-08-04", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5"], "kind": "release", "note": "Also on Mac."}
+      ]
+    },
+    {
+      "id": "onimusha-way-of-the-sword",
+      "name": "Onimusha: Way of the Sword",
+      "aka": ["Onimusha Way of the Sword"],
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "genres": ["action-adventure"],
+      "blurb": "Onimusha: Way of the Sword is Capcom's new Onimusha action-adventure, dated 4 September 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. It is a new entry rather than a port of the PlayStation 2 games. Capcom is credited as the developer.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-09-04", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "fire-emblem-fortunes-weave",
+      "name": "Fire Emblem: Fortune's Weave",
+      "aka": ["Fire Emblem Fortunes Weave"],
+      "developer": "Intelligent Systems",
+      "publisher": "Nintendo",
+      "genres": ["strategy", "rpg"],
+      "blurb": "Fire Emblem: Fortune's Weave is a tactical RPG from Intelligent Systems, published by Nintendo for Switch 2 on 17 September 2026. The public list gives it no other platform. It is a new Fire Emblem, not a port of an older numbered game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-09-17", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "release", "note": "Switch 2."}
+      ]
+    },
+    {
+      "id": "ea-sports-fc-27",
+      "name": "EA Sports FC 27",
+      "aka": ["FC 27", "EA FC 27"],
+      "developer": "EA Vancouver, EA Romania",
+      "publisher": "Electronic Arts",
+      "genres": ["sports"],
+      "blurb": "EA Sports FC 27 is the annual football game dated 25 September 2026. The public list names EA Vancouver and EA Romania, published by Electronic Arts, on PC, Switch, Switch 2, PlayStation 4 and 5, and Xbox One and Series X|S. This page records the current consoles plus Switch and PC.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-09-25", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Also on PlayStation 4 and Xbox One."}
+      ]
+    },
+    {
+      "id": "the-witcher-3-remastered",
+      "name": "The Witcher 3: Wild Hunt Remastered",
+      "aka": ["Witcher 3 Remastered"],
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "genres": ["rpg"],
+      "blurb": "The Witcher 3: Wild Hunt Remastered launched on 29 September 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. CD Projekt Red and Yigsoft are credited, with CD Projekt publishing. It is a remaster of the 2015 game, not The Witcher 4, which still has no day.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-09-29", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Remaster of the 2015 game."}
+      ]
+    },
+    {
+      "id": "call-of-duty-modern-warfare-4",
+      "name": "Call of Duty: Modern Warfare 4",
+      "aka": ["Modern Warfare 4", "CoD MW4", "MW4"],
+      "developer": "Infinity Ward",
+      "publisher": "Activision",
+      "genres": ["shooter"],
+      "blurb": "Call of Duty: Modern Warfare 4 is Infinity Ward's annual shooter, published by Activision on 23 October 2026. The public list includes PC, Switch 2, PlayStation 5 and Xbox Series X|S. It is a new entry, not a port of an older Modern Warfare.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-10-23", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "football-manager-27",
+      "name": "Football Manager 27",
+      "aka": ["FM 27", "FM27"],
+      "developer": "Sports Interactive",
+      "publisher": "Sega",
+      "genres": ["sports", "simulation"],
+      "blurb": "Football Manager 27 is Sports Interactive's management game, dated 10 November 2026. The public list includes Windows, Mac, PlayStation 5, Xbox Series X|S, iOS and Android, with Sega publishing and Netflix named for mobile. This page records PC, the two consoles and mobile, and notes Mac.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-11-10", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series", "mobile"], "kind": "release", "note": "Also on Mac. Netflix is named for the mobile editions."}
+      ]
+    },
+    {
+      "id": "warhammer-survivors",
+      "name": "Warhammer Survivors",
+      "developer": "Auroch Digital",
+      "publisher": "Auroch Digital",
+      "genres": ["action"],
+      "blurb": "Warhammer Survivors is Auroch Digital's bullet-heaven action game, dated 10 November 2026. The public list includes PC, Switch, Switch 2, PlayStation 5 and Xbox Series X|S. It is a separate release from Warhammer 40,000: Dawn of War IV later in the year.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-11-10", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "pikmin-4-switch-2",
+      "name": "Pikmin 4 Switch 2 Edition",
+      "aka": ["Pikmin 4 Dandori Academy"],
+      "developer": "Nintendo EPD, Eighting",
+      "publisher": "Nintendo",
+      "genres": ["strategy", "puzzle"],
+      "blurb": "The Switch 2 edition of Pikmin 4, with the Dandori Academy expansion, is dated 12 November 2026. Nintendo EPD and Eighting are credited, and Nintendo publishes it. It is an edition of the existing Pikmin 4, not a new numbered Pikmin.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-11-12", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 edition plus Dandori Academy."}
+      ]
+    },
+    {
+      "id": "am-i-nima",
+      "name": "Am I Nima",
+      "developer": "",
+      "publisher": "",
+      "genres": ["horror"],
+      "blurb": "Am I Nima is a PC horror game listed for 27 November 2026. Store listings describe it as psychological horror with hand-drawn art and choices. A studio credit and a publisher press release were not opened for this entry, so the day stays scheduled.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"},
+        {"name": "Steam upcoming", "url": "https://store.steampowered.com/explore/upcoming"}
+      ],
+      "releases": [
+        {"date": "2026-11-27", "precision": "day", "confidence": "scheduled", "platforms": ["pc"], "kind": "release", "note": "PC listing. Studio credit not locked here."}
+      ]
+    },
+    {
+      "id": "arkheron",
+      "name": "Arkheron",
+      "developer": "",
+      "publisher": "",
+      "genres": ["action"],
+      "blurb": "Arkheron is listed as an early-access launch on 27 November 2026 for PC, PlayStation 5 and Xbox Series X|S. Public calendars agree on the day and on the early-access label. A 1.0 date and a studio credit are not locked on this page.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2026-11-27", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "ps5", "xbox-series"], "kind": "early-access", "note": "Early access. Studio credit not locked here."}
+      ]
+    },
+    {
+      "id": "dragon-quest-monsters",
+      "name": "Dragon Quest Monsters: The Withered World",
+      "aka": ["DQ Monsters Withered World"],
+      "developer": "Tose",
+      "publisher": "Square Enix",
+      "genres": ["rpg"],
+      "blurb": "Dragon Quest Monsters: The Withered World is a new monsters RPG dated 3 December 2026. Tose developed it and Square Enix publishes it. Platforms in the public list are PC, Switch, Switch 2, PlayStation 5 and Xbox Series X|S.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-03", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "rayman-legends-retold",
+      "name": "Rayman Legends Retold",
+      "aka": ["Rayman Legends remake"],
+      "developer": "Ubisoft Montpellier, Ubisoft Milan",
+      "publisher": "Ubisoft",
+      "genres": ["platformer"],
+      "blurb": "Rayman Legends Retold is Ubisoft's remake of the platformer, dated 3 December 2026 for PC, Switch 2, PlayStation 5 and Xbox Series X|S. Ubisoft Montpellier and Ubisoft Milan are credited. It is a retelling of Rayman Legends, not a new Rayman numbered sequel.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-03", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Remake."}
+      ]
+    },
+    {
+      "id": "dawn-of-war-iv",
+      "name": "Warhammer 40,000: Dawn of War IV",
+      "aka": ["Dawn of War 4", "Dawn of War IV"],
+      "developer": "King Art Games",
+      "publisher": "Deep Silver",
+      "genres": ["strategy"],
+      "blurb": "Warhammer 40,000: Dawn of War IV is a real-time strategy game from King Art Games, published by Deep Silver on 3 December 2026 for PC. The public list does not add consoles. It is the next numbered Dawn of War, separate from other Warhammer games dated nearby.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-03", "precision": "day", "confidence": "confirmed", "platforms": ["pc"], "kind": "release", "note": "PC only in the public list."}
+      ]
+    },
+    {
+      "id": "xenoblade-chronicles-3",
+      "name": "Xenoblade Chronicles 3 Switch 2 Edition",
+      "aka": ["Xenoblade 3 Switch 2"],
+      "developer": "Monolith Soft",
+      "publisher": "Nintendo",
+      "genres": ["rpg"],
+      "blurb": "The Switch 2 edition of Xenoblade Chronicles 3 is a Monolith Soft remaster published by Nintendo on 3 December 2026. The public list files it as a Switch 2 release. It is an edition of the existing game, not a new numbered Xenoblade.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-03", "precision": "day", "confidence": "confirmed", "platforms": ["switch-2"], "kind": "port", "note": "Switch 2 edition."}
+      ]
+    },
+    {
+      "id": "thief-remastered",
+      "name": "Thief: The Dark Project Remastered",
+      "aka": ["Thief remaster"],
+      "developer": "Nightdive Studios",
+      "publisher": "Atari",
+      "genres": ["action-adventure"],
+      "blurb": "Thief: The Dark Project Remastered is Nightdive's stealth remaster, with Eidos-Montréal also credited, published by Atari on 3 December 2026. Platforms include PC, Switch, Switch 2, PlayStation 5 and Xbox Series X|S, plus older consoles in the source list. It is a remaster of the 1998 game.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-03", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Also on PlayStation 4. Eidos-Montréal is also credited."}
+      ]
+    },
+    {
+      "id": "professor-layton",
+      "name": "Professor Layton and the New World of Steam",
+      "aka": ["New World of Steam", "Professor Layton"],
+      "developer": "Level-5",
+      "publisher": "Level-5",
+      "genres": ["puzzle"],
+      "blurb": "Professor Layton and the New World of Steam is Level-5's puzzle adventure, dated 10 December 2026. The public list includes PC, Switch, Switch 2 and PlayStation 5, and credits Level-5's Osaka office. It is a new Layton mystery, not a port of an older case.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-10", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch", "switch-2", "ps5"], "kind": "release", "note": "Puzzle adventure."}
+      ]
+    },
+    {
+      "id": "attack-on-titan-3",
+      "name": "Attack on Titan 3",
+      "aka": ["AoT 3"],
+      "developer": "Omega Force",
+      "publisher": "Koei Tecmo",
+      "genres": ["action"],
+      "blurb": "Attack on Titan 3 is Omega Force's hack-and-slash game, published by Koei Tecmo on 10 December 2026. Platforms in the public list are PC, Switch 2, PlayStation 5 and Xbox Series X|S. It is a new game in the series, not a rerelease of the earlier Koei Tecmo titles.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-10", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "switch-2", "ps5", "xbox-series"], "kind": "release", "note": "Multiplatform launch."}
+      ]
+    },
+    {
+      "id": "path-of-exile-2",
+      "name": "Path of Exile 2",
+      "aka": ["PoE 2"],
+      "developer": "Grinding Gear Games",
+      "publisher": "Grinding Gear Games",
+      "genres": ["action", "rpg"],
+      "blurb": "Path of Exile 2's full release is dated 11 December 2026 for PC, PlayStation 5 and Xbox Series X|S. Grinding Gear Games develops and publishes it. The public list marks this as the 1.0 launch, so earlier early-access time is not the date used here.",
+      "sources": [
+        {"name": "Wikipedia, 2026 release list", "url": "https://en.wikipedia.org/wiki/List_of_video_games_released_in_2026"}
+      ],
+      "releases": [
+        {"date": "2026-12-11", "precision": "day", "confidence": "confirmed", "platforms": ["pc", "ps5", "xbox-series"], "kind": "full-release", "note": "Version 1.0 after early access."}
+      ]
+    },
+    {
+      "id": "witchbrook",
+      "name": "Witchbrook",
+      "developer": "Chucklefish",
+      "publisher": "Chucklefish",
+      "genres": ["simulation", "rpg"],
+      "blurb": "Witchbrook, Chucklefish's magic-school life sim, is listed for 28 January 2027 on PC, Switch, Switch 2, Xbox Series X|S and PlayStation 5. The day comes from public calendars and is marked scheduled. It has been announced for a long time, and this page does not treat older windows as a formal delay list.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-01-28", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "switch", "switch-2", "xbox-series", "ps5"], "kind": "release", "note": "Calendar date. Can still move."}
+      ]
+    },
+    {
+      "id": "exodus",
+      "name": "Exodus",
+      "developer": "Archetype Entertainment",
+      "publisher": "Wizards of the Coast",
+      "genres": ["rpg"],
+      "blurb": "Exodus is Archetype Entertainment's science-fiction RPG, listed for 7 April 2027 on PC, PlayStation 5 and Xbox Series X|S. Wizards of the Coast is the studio's publisher. The day is marked scheduled because it comes from public calendars rather than a press page opened for this entry.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-04-07", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Calendar date. Can still move."}
+      ]
+    },
+    {
+      "id": "outward-2",
+      "name": "Outward 2",
+      "developer": "Nine Dots Studio",
+      "publisher": "Nine Dots Studio",
+      "genres": ["rpg", "survival"],
+      "blurb": "Outward 2 is listed as a PC early-access launch on 8 February 2027. Nine Dots Studio made the first Outward, and that credit is used here for the sequel. The day is scheduled, and a 1.0 date is not on this page.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-02-08", "precision": "day", "confidence": "scheduled", "platforms": ["pc"], "kind": "early-access", "note": "Early access on public calendars."}
+      ]
+    },
+    {
+      "id": "danganronpa-2x2",
+      "name": "Danganronpa 2x2",
+      "aka": ["Danganronpa 2x2"],
+      "developer": "Spike Chunsoft",
+      "publisher": "Spike Chunsoft",
+      "genres": ["puzzle", "rpg"],
+      "blurb": "Danganronpa 2x2 is listed for 14 January 2027 on PC, PlayStation 5, Switch and Switch 2. Spike Chunsoft is the series developer, and that credit is used here. The day is scheduled from public calendars and can still move.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-01-14", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "ps5", "switch", "switch-2"], "kind": "release", "note": "Calendar date. Can still move."}
+      ]
+    },
+    {
+      "id": "metro-2039",
+      "name": "Metro 2039",
+      "developer": "4A Games",
+      "publisher": "Deep Silver",
+      "genres": ["shooter"],
+      "blurb": "Metro 2039 is listed for 4 February 2027 on PC, PlayStation 5 and Xbox Series X|S. 4A Games and Deep Silver are the series' usual studio and publisher, and those credits are used with that caveat. The day is scheduled, not confirmed from a press page opened for this entry.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-02-04", "precision": "day", "confidence": "scheduled", "platforms": ["pc", "ps5", "xbox-series"], "kind": "release", "note": "Calendar date. Studio credit follows the series."}
+      ]
+    },
+    {
+      "id": "until-dawn-2",
+      "name": "Until Dawn 2",
+      "developer": "",
+      "publisher": "",
+      "genres": ["horror"],
+      "blurb": "Until Dawn 2 is listed as a PlayStation 5 horror game for 28 January 2027. Public calendars agree on the day. A studio credit is not locked on this page, so none is shown. The date stays scheduled and can still move.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027-01-28", "precision": "day", "confidence": "scheduled", "platforms": ["ps5"], "kind": "release", "note": "Calendar date. Studio not locked here."}
+      ]
+    },
+    {
+      "id": "clockwork-revolution",
+      "name": "Clockwork Revolution",
+      "developer": "inXile Entertainment",
+      "publisher": "Xbox Game Studios",
+      "genres": ["rpg"],
+      "blurb": "Clockwork Revolution is inXile's announced role-playing game for PC and Xbox. Public calendars put it in 2027 without a day, so this page uses a 2027 window and leaves the day TBA. It is not given a made-up month.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027", "precision": "year", "confidence": "window", "platforms": ["pc", "xbox-series"], "kind": "release", "note": "2027 window. No day."}
+      ]
+    },
+    {
+      "id": "bloodstained-scarlet-engagement",
+      "name": "Bloodstained: The Scarlet Engagement",
+      "aka": ["Scarlet Engagement"],
+      "developer": "",
+      "publisher": "",
+      "genres": ["action-adventure"],
+      "blurb": "Bloodstained: The Scarlet Engagement is the announced prequel to Bloodstained: Ritual of the Night. Public calendars place it in 2027 on PC and PlayStation 5 without a day. The day stays TBA. A studio credit is not locked on this page.",
+      "sources": [
+        {"name": "GamesRadar release schedule", "url": "https://www.gamesradar.com/video-game-release-dates/"}
+      ],
+      "releases": [
+        {"date": "2027", "precision": "year", "confidence": "window", "platforms": ["pc", "ps5"], "kind": "release", "note": "2027 window. No day."}
+      ]
+    }
+  ]
+}
