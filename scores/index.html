@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbourline — live scores and fixtures</title>
+<meta name="description" content="Harbourline lists football, basketball, tennis, hockey, and NFL fixtures with kick-off dates and times in your local time zone, plus live scores and final results.">
+<link rel="canonical" href="https://anlap26.github.io/scores/">
+<meta name="theme-color" content="#14343c">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://site.api.espn.com">
+<link rel="preconnect" href="https://a.espncdn.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/scores/styles.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to matches</a>
+<header class="top">
+  <div class="shell top-inner">
+    <a class="brand" href="/scores/">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="5" y="7" width="4" height="26" rx="2" fill="currentColor"></rect>
+        <rect x="31" y="7" width="4" height="26" rx="2" fill="currentColor"></rect>
+        <path d="M9 27c6.2 7 15.8 7 22 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+        <circle cx="20" cy="13" r="4" fill="#e28a5a"></circle>
+      </svg>
+      <span>
+        <p class="brand-name">Harbourline</p>
+        <p class="brand-tag">Fixtures and scores, in your time</p>
+      </span>
+    </a>
+    <nav class="sports" id="sports" aria-label="Sport"></nav>
+  </div>
+</header>
+<div class="shell">
+  <div class="toolbar">
+    <div class="days" id="days" role="group" aria-label="Day"></div>
+    <div class="meta">
+      <p class="tz" id="tz-label">Times in Europe/Nicosia</p>
+      <p class="updated" id="updated">Loading fixtures…</p>
+      <button class="refresh" id="refresh" type="button">Refresh</button>
+    </div>
+  </div>
+  <div class="filters" id="filters" role="group" aria-label="Match status"></div>
+  <div id="notice"></div>
+  <main id="board">
+    <div class="loading-block">
+      <p>Loading fixtures…</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>Scores, kick-off times, and results are loaded in your browser from ESPN’s public scoreboard feeds (<a href="https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard">site.api.espn.com</a>). Harbourline is not affiliated with ESPN, Disney, or any league.</p>
+    <p>Times and dates on every match are converted to this device’s time zone. If the zone cannot be read, times are shown for Europe/Nicosia. Live matches refresh about every 45 seconds while this tab is open.</p>
+    <p class="footer-links">
+      <a href="/">Home</a>
+      <a href="/Free-online-calculators/">Calculators</a>
+    </p>
+  </footer>
+</div>
+<noscript>
+  <div class="shell">
+    <p class="banner">Harbourline needs JavaScript to load scores.</p>
+  </div>
+</noscript>
+<script type="module" src="/scores/app.js"></script>
+</body>
+</html>
