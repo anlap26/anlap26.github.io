@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Harbourline">
+  <rect width="64" height="64" fill="#e8f14a"/>
+  <rect x="7" y="8" width="6" height="40" rx="3" fill="#111208"/>
+  <rect x="51" y="8" width="6" height="40" rx="3" fill="#111208"/>
+  <path d="M13 38c8 14 30 14 38 0" fill="none" stroke="#111208" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="32" cy="22" r="6.5" fill="#09090b"/>
+</svg>
