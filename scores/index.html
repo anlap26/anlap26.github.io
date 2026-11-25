@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbourline — live scores and fixtures</title>
+<meta name="description" content="Harbourline lists football, basketball, tennis, hockey, and NFL fixtures with kick-off dates and times in your local time zone, plus live scores and final results.">
+<link rel="canonical" href="https://anlap26.github.io/scores/">
+<meta name="theme-color" content="#14343c">
+<link rel="icon" href="/scores/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/scores/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/scores/favicon-48x48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/scores/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/scores/icon-192.png" type="image/png" sizes="192x192">
+<link rel="icon" href="/scores/icon-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="/scores/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/scores/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://site.api.espn.com">
+<link rel="preconnect" href="https://a.espncdn.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://anlap26.github.io/scores/#website",
+      "url": "https://anlap26.github.io/scores/",
+      "name": "Harbourline",
+      "description": "Live scores and fixtures with kick-off times in your local time zone.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://anlap26.github.io/scores/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://anlap26.github.io/scores/#organization",
+      "name": "Harbourline",
+      "url": "https://anlap26.github.io/scores/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://anlap26.github.io/scores/icon-512.png",
+        "width": 512,
+        "height": 512
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/scores/styles.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to matches</a>
+<header class="top">
+  <div class="shell top-inner">
+    <a class="brand" href="/scores/">
+      <img class="mark" src="/scores/favicon.svg" width="42" height="42" alt="">
+      <span>
+        <p class="brand-name">Harbourline</p>
+        <p class="brand-tag">Fixtures and scores, in your time</p>
+      </span>
+    </a>
+    <nav class="sports" id="sports" aria-label="Sport"></nav>
+  </div>
+</header>
+<div class="shell">
+  <div class="toolbar">
+    <div class="days" id="days" role="group" aria-label="Day"></div>
+    <div class="meta">
+      <p class="tz" id="tz-label">Times in Europe/Nicosia</p>
+      <p class="updated" id="updated">Loading fixtures…</p>
+      <button class="refresh" id="refresh" type="button">Refresh</button>
+    </div>
+  </div>
+  <div class="filters" id="filters" role="group" aria-label="Match status"></div>
+  <div id="notice"></div>
+  <main id="board">
+    <div class="loading-block">
+      <p>Loading fixtures…</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>Scores, kick-off times, and results are loaded in your browser from ESPN’s public scoreboard feeds (<a href="https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard">site.api.espn.com</a>). Harbourline is not affiliated with ESPN, Disney, or any league.</p>
+    <p>Times and dates on every match are converted to this device’s time zone. If the zone cannot be read, times are shown for Europe/Nicosia. Live matches refresh about every 45 seconds while this tab is open. Open a match for the timeline, lineups, and stats. Tables and team fixtures are linked from each competition. Stars are saved in this browser.</p>
+    <div class="footer-partners">
+      <p class="partners-kicker"><span class="ad-tag">Ad</span> Partners</p>
+      <ul class="partner-links">
+        <li><a href="https://aviasales.tpx.lt/1sQ7N99K" rel="sponsored noopener" target="_blank">Aviasales <span>Flights</span></a></li>
+        <li><a href="https://klook.tpx.lt/xtutlwca" rel="sponsored noopener" target="_blank">Klook <span>Tickets and tours</span></a></li>
+        <li><a href="https://kiwitaxi.tpx.lt/pmM77dyU" rel="sponsored noopener" target="_blank">Kiwitaxi <span>Transfers</span></a></li>
+        <li><a href="https://tpx.lt/sJrz0dYS" rel="sponsored noopener" target="_blank">Welcome Pickups <span>Airport transfers</span></a></li>
+        <li><a href="https://airalo.tpx.lt/nILAEUYZ" rel="sponsored noopener" target="_blank">Airalo <span>eSIM</span></a></li>
+        <li><a href="https://yesim.tpx.lt/L3JvkZOj" rel="sponsored noopener" target="_blank">Yesim <span>eSIM</span></a></li>
+        <li><a href="https://www.amazon.de/s?k=football%20boots%20jersey%20ball&amp;tag=cynews24-21" rel="sponsored noopener" target="_blank">Amazon.de <span>Fan gear</span></a></li>
+      </ul>
+      <p>Some of these are affiliate links. If you use one, Harbourline may earn a commission at no extra cost to you. <a href="/Free-online-calculators/affiliate-disclosure/">Affiliate disclosure</a>.</p>
+    </div>
+    <p class="footer-links">
+      <a href="/">Home</a>
+      <a href="/Free-online-calculators/">Calculators</a>
+    </p>
+  </footer>
+</div>
+<noscript>
+  <div class="shell">
+    <p class="banner">Harbourline needs JavaScript to load scores.</p>
+  </div>
+</noscript>
+<script type="module" src="/scores/app.js"></script>
+</body>
+</html>
