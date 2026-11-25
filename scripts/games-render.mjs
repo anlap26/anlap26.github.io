@@ -318,6 +318,14 @@ function hashId(id) {
   return hash >>> 0;
 }
 
+function artMarkup(game, suffix) {
+  if (game.image) {
+    const label = `${game.name} official key art`;
+    return `<img class="art" src="${esc(game.image)}" alt="${esc(label)}" width="1280" height="720">`;
+  }
+  return coverMarkup(game.id, suffix);
+}
+
 function coverMarkup(id, suffix) {
   const hash = hashId(`${suffix}:${id}`);
   const hueA = 262 + (hash % 38);
@@ -499,7 +507,7 @@ function coverCard(game, asOf) {
   return `<li class="cover" data-game="${esc(hay)}">
     <a class="cover-link" href="${esc(game.path)}">
       <span class="chip">${esc(rowDate(game))}</span>
-      ${coverMarkup(game.id, "card")}
+      ${artMarkup(game, "card")}
       <span class="cover-name">${esc(game.name)}</span>
     </a>
     <div class="cover-meta">${platformPills(game.platforms)}${shopButton(game, asOf)}</div>
@@ -512,7 +520,7 @@ function gameList(games, empty, asOf) {
 }
 
 function rankList(games) {
-  return `<ol class="ranks">${games.map((game, index) => `<li><a href="${esc(game.path)}"><span class="n">${index + 1}</span><span><strong>${esc(game.name)}</strong><em>${esc(rowDate(game))} · ${esc(game.platforms[0] ? (PILL[game.platforms[0]] || PLATFORMS[game.platforms[0]].short) : "TBA")}</em></span>${coverMarkup(game.id, `rank${index}`)}</a></li>`).join("")}</ol>`;
+  return `<ol class="ranks">${games.map((game, index) => `<li><a href="${esc(game.path)}"><span class="n">${index + 1}</span><span><strong>${esc(game.name)}</strong><em>${esc(rowDate(game))} · ${esc(game.platforms[0] ? (PILL[game.platforms[0]] || PLATFORMS[game.platforms[0]].short) : "TBA")}</em></span>${artMarkup(game, `rank${index}`)}</a></li>`).join("")}</ol>`;
 }
 
 function monthTabs(months, activeKey) {
@@ -637,6 +645,7 @@ function videoGameLd(game) {
   };
   if (game.developer) node.author = { "@type": "Organization", name: game.developer };
   if (game.publisher) node.publisher = { "@type": "Organization", name: game.publisher };
+  if (game.image) node.image = abs(game.image);
   if (game.lead.precision === "day" && game.status.code === "released") node.datePublished = game.lead.date;
   if (game.lead.precision === "day") {
     node.additionalProperty = {
@@ -776,7 +785,7 @@ export function buildGamesSite(data) {
       const line = featured.blurb.split(/(?<=\.)\s/)[0];
       return `<div class="stage">
       <section class="hero">
-        <div class="hero-art">${coverMarkup(featured.id, "hero")}</div>
+        <div class="hero-art">${artMarkup(featured, "hero")}</div>
         <div class="hero-copy">
           <p class="kicker">${esc(genre)}</p>
           <p class="hero-title">${esc(featured.name)}</p>
@@ -784,6 +793,7 @@ export function buildGamesSite(data) {
           ${countdownBlock(featured, asOf)}
           <div class="pills">${platformPills(featured.platforms)}</div>
           <a class="cta" href="${esc(featured.path)}">View game</a>
+          ${featured.imageCredit ? `<p class="credit">Image: ${esc(featured.imageCredit)}</p>` : ""}
         </div>
       </section>
       <aside class="rank">
@@ -1024,7 +1034,7 @@ export function buildGamesSite(data) {
       intro: [game.blurb],
       extraLd: [videoGameLd(game), faqLd(faqs)],
       main: `<section class="game-hero">
-        ${coverMarkup(game.id, "page")}
+        ${artMarkup(game, "page")}
         <div>
           <p class="kicker">${esc(confidenceLabel(game.lead.confidence))}</p>
           <p class="big-date">${esc(game.when)}</p>
@@ -1032,6 +1042,7 @@ export function buildGamesSite(data) {
           ${countdownBlock(game, asOf)}
           <div class="pills">${platformPills(game.platforms)}</div>
           ${amazonBlock(game, asOf)}
+          ${game.imageCredit ? `<p class="credit">Image: ${esc(game.imageCredit)}</p>` : ""}
         </div>
       </section>
       <dl class="facts">
@@ -1062,13 +1073,14 @@ export function buildGamesSite(data) {
       intro: [faqs[0].a],
       extraLd: [faqLd(faqs)],
       main: `<section class="game-hero">
-        ${coverMarkup(game.id, "ask")}
+        ${artMarkup(game, "ask")}
         <div>
           <p class="big-date">${esc(game.when)}</p>
           <p class="badge ${esc(game.status.code)}">${esc(game.status.label)}</p>
           ${countdownBlock(game, asOf)}
           <div class="pills">${platformPills(game.platforms)}</div>
           ${amazonBlock(game, asOf)}
+          ${game.imageCredit ? `<p class="credit">Image: ${esc(game.imageCredit)}</p>` : ""}
         </div>
       </section>
       ${faqHtml(faqs)}
