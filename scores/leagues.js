@@ -61,3 +61,7 @@ export const LEAGUES = [
 export function leaguesForSport(sport) {
   return LEAGUES.filter((league) => league.sport === sport);
 }
+
+export function leagueById(id) {
+  return LEAGUES.find((league) => league.id === id) || null;
+}

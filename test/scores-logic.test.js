@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { isMine, teamKey } from "../scores/favourites.js";
+import { parseSchedule, parseStandings, parseSummary, splitSchedule } from "../scores/detail.js";
 import {
   addDaysYmd,
   describeStatus,
@@ -215,4 +217,121 @@ test("groups Europe before Cyprus before England", () => {
   ]);
   assert.deepEqual(groups.map((g) => g.country), ["Europe", "Cyprus", "England"]);
   assert.deepEqual(groups[2].leagues.map((l) => l.name), ["Premier League", "Championship"]);
+  assert.equal(groups[0].leagues[0].id, "ucl");
+});
+
+test("stores team ids from the scoreboard", () => {
+  const matches = normalizeScoreboard({
+    leagues: [{ name: "Premier League" }],
+    events: [{
+      id: "10",
+      date: "2026-11-24T20:00Z",
+      competitions: [{
+        id: "10",
+        date: "2026-11-24T20:00Z",
+        status: { type: { name: "STATUS_FULL_TIME", state: "post", shortDetail: "FT" } },
+        competitors: [
+          { homeAway: "home", score: "1", team: { id: "359", displayName: "Arsenal" } },
+          { homeAway: "away", score: "1", team: { id: "124", displayName: "Borussia Dortmund" } },
+        ],
+      }],
+    }],
+  }, { ...ucl, id: "epl", name: "Premier League" });
+  assert.equal(matches[0].eventId, "10");
+  assert.equal(matches[0].home.id, "359");
+  assert.equal(matches[0].away.id, "124");
+});
+
+test("summary keeps goals, substitutions, lineups, and ignores betting fields", () => {
+  const detail = parseSummary({
+    header: {
+      competitions: [{
+        date: "2026-11-24T20:00Z",
+        status: { type: { name: "STATUS_FULL_TIME", state: "post", shortDetail: "FT" } },
+        competitors: [
+          { homeAway: "home", score: "1", team: { id: "359", displayName: "Arsenal" } },
+          { homeAway: "away", score: "1", team: { id: "124", displayName: "Borussia Dortmund" } },
+        ],
+      }],
+    },
+    gameInfo: { venue: { fullName: "Emirates Stadium", address: { city: "London" } }, attendance: 60000, officials: [{ displayName: "A Referee" }] },
+    odds: [{ details: "should not surface" }],
+    keyEvents: [
+      { id: "1", type: { text: "Kickoff" }, text: "First Half begins.", clock: { value: 0, displayValue: "" }, scoringPlay: false },
+      { id: "2", type: { text: "Goal" }, text: "Viktor Gyokeres Goal", shortText: "Viktor Gyokeres Goal", clock: { value: 549, displayValue: "10'" }, scoringPlay: true, team: { id: "359", displayName: "Arsenal" }, participants: [{ athlete: { displayName: "Viktor Gyokeres" } }] },
+      { id: "3", type: { text: "Substitution" }, text: "Eze replaces Tzolis", clock: { value: 3865, displayValue: "65'" }, team: { id: "359", displayName: "Arsenal" }, participants: [{ athlete: { displayName: "Eberechi Eze" } }, { athlete: { displayName: "Christos Tzolis" } }] },
+      { id: "4", type: { text: "Yellow Card" }, text: "Yellow card.", clock: { value: 4000, displayValue: "67'" }, team: { displayName: "Arsenal" }, participants: [{ athlete: { displayName: "Ben White" } }] },
+    ],
+    rosters: [{
+      homeAway: "home",
+      formation: "4-2-3-1",
+      team: { id: "359", displayName: "Arsenal" },
+      roster: [
+        { starter: true, jersey: "13", formationPlace: "1", athlete: { displayName: "Kepa" }, position: { abbreviation: "GK" } },
+        { starter: false, jersey: "7", athlete: { displayName: "Saka" }, position: { abbreviation: "FW" } },
+      ],
+    }],
+    boxscore: {
+      teams: [
+        { homeAway: "home", statistics: [{ name: "possessionPct", label: "Possession", displayValue: "58" }, { name: "passPct", label: "Pass completion", displayValue: "0.9" }] },
+        { homeAway: "away", statistics: [{ name: "possessionPct", label: "Possession", displayValue: "42" }, { name: "passPct", label: "Pass completion", displayValue: "0.8" }] },
+      ],
+    },
+    seasonseries: [{ type: "head-to-head", summary: "ARS leads series 3-2", events: [{ id: "9", date: "2026-08-09T13:00:00Z", statusType: { shortDetail: "FT" }, competitors: [{ homeAway: "home", score: "2", team: { displayName: "Arsenal" } }, { homeAway: "away", score: "3", team: { displayName: "Dortmund" } }] }] }],
+  });
+  assert.equal(detail.venue.name, "Emirates Stadium");
+  assert.deepEqual(detail.officials, ["A Referee"]);
+  assert.deepEqual(detail.timeline.map((item) => item.kind), ["goal", "sub", "card"]);
+  assert.equal(detail.timeline[0].minute, "10'");
+  assert.equal(detail.lineups[0].formation, "4-2-3-1");
+  assert.equal(detail.lineups[0].starters[0].name, "Kepa");
+  assert.equal(detail.stats[0].home, "58");
+  assert.equal(detail.stats.find((stat) => stat.name === "passPct").home, "90");
+  assert.equal(detail.h2h.summary, "ARS leads series 3-2");
+  assert.equal(detail.h2h.events[0].homeScore, "2");
+  assert.equal(JSON.stringify(detail).includes("should not surface"), false);
+});
+
+test("standings and schedules survive ESPN's shapes", () => {
+  const tables = parseStandings({
+    children: [{
+      name: "League Phase",
+      standings: { entries: [{ team: { id: "359", displayName: "Arsenal" }, stats: [
+        { name: "rank", displayValue: "1" },
+        { name: "gamesPlayed", displayValue: "5" },
+        { name: "wins", displayValue: "5" },
+        { name: "points", displayValue: "15" },
+      ] }] },
+    }],
+  });
+  assert.equal(tables[0].rows[0].team, "Arsenal");
+  assert.equal(tables[0].rows[0].rank, "1");
+  assert.ok(tables[0].columns.some((column) => column.key === "points"));
+
+  const schedule = parseSchedule({
+    team: { id: "359", displayName: "Arsenal" },
+    events: [{
+      id: "55",
+      date: "2026-11-21T17:30Z",
+      competitions: [{
+        status: { type: { state: "post", shortDetail: "FT" } },
+        competitors: [
+          { homeAway: "home", winner: false, team: { id: "361", displayName: "Newcastle" }, score: { displayValue: "2" } },
+          { homeAway: "away", winner: false, team: { id: "359", displayName: "Arsenal" }, score: { displayValue: "2" } },
+        ],
+      }],
+    }],
+  });
+  assert.equal(schedule.events[0].home.score, "2");
+  const split = splitSchedule(schedule.events, Date.parse("2026-11-25T12:00:00Z"));
+  assert.equal(split.recent.length, 1);
+  assert.equal(split.upcoming.length, 0);
+});
+
+test("my games includes a starred team or league", () => {
+  const match = { id: "epl:1", leagueId: "epl", sport: "football", home: { id: "359" }, away: { id: "124" } };
+  const favs = { matches: new Set(), teams: new Set([teamKey("football", "359")]), leagues: new Set() };
+  assert.equal(isMine(match, favs), true);
+  assert.equal(isMine({ ...match, home: { id: "1" }, away: { id: "2" } }, favs), false);
+  assert.equal(isMine(match, { matches: new Set(), teams: new Set(), leagues: new Set(["epl"]) }), true);
 });

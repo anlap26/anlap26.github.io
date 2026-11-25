@@ -187,6 +187,7 @@ function sideFromCompetitor(comp, tennis) {
     name = team.displayName || team.shortDisplayName || team.name || "TBD";
     logo = team.logo || "";
   }
+  const rawId = tennis ? athlete.id : team.id;
   const sets = Array.isArray(comp?.linescores)
     ? comp.linescores.map((set) => ({
         value: set?.value,
@@ -194,6 +195,7 @@ function sideFromCompetitor(comp, tennis) {
       }))
     : [];
   return {
+    id: rawId == null ? "" : String(rawId),
     name,
     logo: typeof logo === "string" ? logo : "",
     score: comp?.score == null ? null : String(comp.score),
@@ -225,6 +227,7 @@ function competitionMatch(comp, event, league, leagueName, round) {
   const venue = comp?.venue?.fullName || comp?.venue?.displayName || event?.venue?.fullName || event?.venue?.displayName || "";
   return {
     id: `${league.id}:${comp?.id || event?.id || start}`,
+    eventId: String(comp?.id || event?.id || ""),
     leagueId: league.id,
     sport: league.sport,
     country: league.country,
@@ -298,7 +301,7 @@ export function groupMatches(matches) {
     }
     let league = country.leagues.get(match.league);
     if (!league) {
-      league = { name: match.league, rank: match.leagueRank, matches: [] };
+      league = { name: match.league, rank: match.leagueRank, id: match.leagueId, matches: [] };
       country.leagues.set(match.league, league);
     }
     league.matches.push(match);
