@@ -401,7 +401,12 @@ function renderBoard() {
   const ymd = selectedYmd();
   const headingDate = civilLabel(ymd);
   const sportLabel = SPORTS.find((item) => item.id === state.sport)?.label || "Scores";
-  const dayMatches = state.matches.filter((match) => match.sport === state.sport && onLocalDay(match, ymd, state.timeZone));
+  const onlyLeague = document.body?.dataset?.league || "";
+  const dayMatches = state.matches.filter((match) => {
+    if (match.sport !== state.sport || !onLocalDay(match, ymd, state.timeZone)) return false;
+    if (onlyLeague && match.leagueId !== onlyLeague) return false;
+    return true;
+  });
   const shown = state.bucket === "all"
     ? dayMatches
     : state.bucket === "mine"
@@ -481,7 +486,7 @@ function renderBoard() {
   }
 
   board.replaceChildren(fragment);
-  document.title = `${headingDate.longLabel} · Harbourline scores`;
+  setTitle(`${headingDate.longLabel} · Harbourline scores`);
 }
 
 function renderNotice() {
@@ -551,7 +556,12 @@ async function load({ fresh = false, leagues = null } = {}) {
   if (activeController) activeController.abort();
   const controller = new AbortController();
   activeController = controller;
-  const sportLeagues = leagues || leaguesForSport(state.sport);
+  let sportLeagues = leagues || leaguesForSport(state.sport);
+  const onlyLeague = document.body?.dataset?.league || "";
+  if (!leagues && onlyLeague) {
+    const narrowed = sportLeagues.filter((league) => league.id === onlyLeague);
+    if (narrowed.length) sportLeagues = narrowed;
+  }
   const dates = espnDatesForLocalDay(selectedYmd(), state.timeZone);
   const jobs = sportLeagues.flatMap((league) => dates.map((espnDate) => ({ league, espnDate })));
   state.loading = true;
@@ -830,7 +840,7 @@ function renderTennisDetail(fragment, match, league) {
   }
   fragment.append(card);
   fragment.append(travelBlock(`${match.home.name} ${match.away.name} tennis`));
-  document.title = `${match.home.name} vs ${match.away.name} · Harbourline`;
+  setTitle(`${match.home.name} vs ${match.away.name} · Harbourline`);
 }
 
 function setLine(side) {
@@ -990,7 +1000,7 @@ function renderSummaryDetail(fragment, detail, league) {
   }
   const home = detail.home?.name || "Home";
   const away = detail.away?.name || "Away";
-  document.title = `${home} vs ${away} · Harbourline`;
+  setTitle(`${home} vs ${away} · Harbourline`);
 }
 
 function scoreHeader(detail) {
@@ -1158,7 +1168,7 @@ function renderTablePage() {
     for (const table of state.detail.tables) fragment.append(standingsCard(table, league));
   }
   board.replaceChildren(fragment);
-  document.title = `${league?.name || "Table"} · Harbourline`;
+  setTitle(`${league?.name || "Table"} · Harbourline`);
 }
 
 function standingsCard(table, league) {
@@ -1247,7 +1257,7 @@ function renderTeamPage() {
   fragment.append(sectionTitle("Recent results"));
   fragment.append(fixtureList(parts.recent, league, "No recent results in this competition."));
   board.replaceChildren(fragment);
-  document.title = `${schedule.name} · Harbourline`;
+  setTitle(`${schedule.name} · Harbourline`);
 }
 
 function standingBlurb(tables, teamId) {
@@ -1312,6 +1322,21 @@ function fixtureList(events, league, emptyText) {
   return card;
 }
 
+function setTitle(value) {
+  if (document.body?.dataset?.keepTitle === "1") return;
+  document.title = value;
+}
+
+function applyEmbeddedPage() {
+  if (location.hash) return;
+  const day = document.body?.dataset?.day;
+  if (day === "yesterday") state.dayOffset = -1;
+  if (day === "tomorrow") state.dayOffset = 1;
+  if (day === "today") state.dayOffset = 0;
+  const sport = document.body?.dataset?.sport;
+  if (SPORTS.some((item) => item.id === sport)) state.sport = sport;
+}
+
 function boardHash(sport = state.sport, offset = state.dayOffset) {
   const day = DAY_OFFSETS.find((item) => item.offset === offset)?.id || "today";
   return `#${sport}/${day}`;
@@ -1374,8 +1399,9 @@ window.addEventListener("hashchange", () => {
 });
 
 readRoute();
+applyEmbeddedPage();
 if (state.view === "board") {
-  writeRoute();
+  if (document.body?.dataset?.keepTitle !== "1") writeRoute();
   void load({ fresh: false });
 } else {
   void openDeep();

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://anlap26.github.io/sitemap.xml
+Sitemap: https://anlap26.github.io/scores/sitemap.xml
 Sitemap: https://anlap26.github.io/Free-online-calculators/sitemap.xml
