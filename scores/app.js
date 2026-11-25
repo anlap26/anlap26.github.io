@@ -1,4 +1,5 @@
 import { parseSchedule, parseStandings, parseSummary, scheduleUrl, splitSchedule, standingsUrl, summaryUrl } from "./detail.js";
+import { PARTNERS, amazonSearch } from "./partners.js";
 import { isMine, loadFavs, teamKey, toggleFav } from "./favourites.js";
 import { SPORTS, leagueById, leaguesForSport } from "./leagues.js";
 import {
@@ -670,6 +671,43 @@ function backLink() {
   return p;
 }
 
+function partnerLink(href, name, hint) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = href;
+  a.rel = "sponsored noopener";
+  a.target = "_blank";
+  a.append(document.createTextNode(name));
+  if (hint) {
+    const span = document.createElement("span");
+    span.textContent = hint;
+    a.append(span);
+  }
+  li.append(a);
+  return li;
+}
+
+function travelBlock(gearQuery) {
+  const aside = document.createElement("aside");
+  aside.className = "partners";
+  aside.setAttribute("aria-label", "Partner links");
+  const kicker = document.createElement("p");
+  kicker.className = "partners-kicker";
+  const tag = document.createElement("span");
+  tag.className = "ad-tag";
+  tag.textContent = "Ad";
+  kicker.append(tag, document.createTextNode("Travel to the match"));
+  const note = document.createElement("p");
+  note.className = "section-note";
+  note.textContent = "Flights, a transfer, or an eSIM for the trip. Partner links.";
+  const list = document.createElement("ul");
+  list.className = "partner-links";
+  for (const partner of PARTNERS) list.append(partnerLink(partner.href, partner.name, partner.hint));
+  list.append(partnerLink(amazonSearch(gearQuery), "Amazon.de", "Fan gear"));
+  aside.append(kicker, note, list);
+  return aside;
+}
+
 function sectionTitle(text) {
   const h = document.createElement("h3");
   h.className = "section-title";
@@ -791,6 +829,7 @@ function renderTennisDetail(fragment, match, league) {
     card.append(panelNote("Set scores have not been posted yet."));
   }
   fragment.append(card);
+  fragment.append(travelBlock(`${match.home.name} ${match.away.name} tennis`));
   document.title = `${match.home.name} vs ${match.away.name} · Harbourline`;
 }
 
@@ -814,6 +853,9 @@ function setLine(side) {
 
 function renderSummaryDetail(fragment, detail, league) {
   fragment.append(scoreHeader({ ...detail, league, tennis: false }));
+  const homeName = detail.home?.name || "";
+  const awayName = detail.away?.name || "";
+  fragment.append(travelBlock(`${homeName} ${awayName} football jersey`.trim()));
   const described = describeStatus(detail.status);
   const soccer = league?.espnSport === "soccer";
   if (soccer) {
@@ -1108,6 +1150,7 @@ function renderTablePage() {
   heading.textContent = league ? `${league.name} table` : "Table";
   fragment.append(heading);
   if (league) fragment.append(starButton("leagues", league.id, league.name));
+  fragment.append(travelBlock(`${league?.name || "football"} shirt`));
   if (state.detailLoading) fragment.append(loadingBlock("Loading standings…"));
   else if (state.detailError) fragment.append(panelNote(state.detailError));
   else if (!state.detail?.tables?.length) fragment.append(panelNote("No standings table is published for this competition."));
@@ -1197,6 +1240,7 @@ function renderTeamPage() {
   fragment.append(heading, tools);
   const blurb = standingBlurb(state.detail.tables || [], state.teamId);
   fragment.append(panelNote(blurb || "No standing is published for this team in this competition."));
+  fragment.append(travelBlock(`${schedule.name} football jersey`));
   const parts = splitSchedule(schedule.events);
   fragment.append(sectionTitle("Upcoming"));
   fragment.append(fixtureList(parts.upcoming, league, "No upcoming fixtures in this competition."));

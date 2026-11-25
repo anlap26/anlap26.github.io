@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { isMine, teamKey } from "../scores/favourites.js";
+import { PARTNERS, amazonSearch } from "../scores/partners.js";
 import { parseSchedule, parseStandings, parseSummary, splitSchedule } from "../scores/detail.js";
 import {
   addDaysYmd,
@@ -326,6 +327,17 @@ test("standings and schedules survive ESPN's shapes", () => {
   const split = splitSchedule(schedule.events, Date.parse("2026-11-25T12:00:00Z"));
   assert.equal(split.recent.length, 1);
   assert.equal(split.upcoming.length, 0);
+});
+
+test("partner links are the approved URLs", () => {
+  const byId = Object.fromEntries(PARTNERS.map((partner) => [partner.id, partner.href]));
+  assert.equal(byId.aviasales, "https://aviasales.tpx.lt/1sQ7N99K");
+  assert.equal(byId.klook, "https://klook.tpx.lt/xtutlwca");
+  assert.equal(byId.kiwitaxi, "https://kiwitaxi.tpx.lt/pmM77dyU");
+  assert.equal(byId.welcome, "https://tpx.lt/sJrz0dYS");
+  assert.equal(byId.airalo, "https://airalo.tpx.lt/nILAEUYZ");
+  assert.equal(byId.yesim, "https://yesim.tpx.lt/L3JvkZOj");
+  assert.equal(amazonSearch("Arsenal jersey"), "https://www.amazon.de/s?k=Arsenal%20jersey&tag=cynews24-21");
 });
 
 test("my games includes a starred team or league", () => {
