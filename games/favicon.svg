@@ -1,9 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Streetdate">
-  <rect width="64" height="64" rx="14" fill="#1b1612"/>
-  <rect x="14" y="15" width="36" height="36" rx="5" fill="#fffaf4"/>
-  <path d="M14 22h36v6H14z" fill="#d84a2f"/>
-  <circle cx="23" cy="20.5" r="2" fill="#1b1612"/>
-  <circle cx="41" cy="20.5" r="2" fill="#1b1612"/>
-  <path d="M22 36h20" stroke="#146963" stroke-width="3" stroke-linecap="round"/>
-  <path d="M26 43h12" stroke="#8d6424" stroke-width="3" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="14" fill="#07080f"/>
+  <path d="M14 42 V18 h14 c8 0 12 4 12 10s-4 10-12 10H22" fill="none" stroke="url(#sd)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M18 46 h28" stroke="#3ce7ff" stroke-width="4" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="sd" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c15bff"/>
+      <stop offset="1" stop-color="#3ce7ff"/>
+    </linearGradient>
+  </defs>
 </svg>

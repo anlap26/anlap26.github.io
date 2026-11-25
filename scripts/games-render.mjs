@@ -309,16 +309,73 @@ function itemListLd(name, games) {
   };
 }
 
+function hashId(id) {
+  let hash = 2166136261;
+  for (let index = 0; index < id.length; index += 1) {
+    hash ^= id.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function coverMarkup(id, suffix) {
+  const hash = hashId(`${suffix}:${id}`);
+  const hueA = 262 + (hash % 38);
+  const hueB = 172 + ((hash >> 8) % 32);
+  const gid = `g-${suffix}-${id}`;
+  const motif = hash % 4;
+  const shapes = [
+    `<circle cx="112" cy="36" r="34" fill="hsl(${hueB} 95% 62% / .45)"/>`,
+    `<path d="M-8 150 L90 18 L168 78 L30 190 Z" fill="hsl(${hueA} 85% 58% / .42)"/>`,
+    `<rect x="18" y="48" width="78" height="78" transform="rotate(${hash % 28} 57 87)" fill="none" stroke="hsl(${hueB} 100% 72% / .75)" stroke-width="7"/>`,
+    `<path d="M0 52 H160 M0 96 H160 M0 140 H160" stroke="hsl(${hueA} 90% 70% / .35)" stroke-width="7"/>`,
+  ];
+  return `<svg class="art" viewBox="0 0 160 200" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${hueA} 78% 38%)"/><stop offset="1" stop-color="hsl(${hueB} 65% 14%)"/></linearGradient></defs><rect width="160" height="200" fill="url(#${gid})"/>${shapes[motif]}${shapes[(motif + 1) % 4]}</svg>`;
+}
+
+const PILL = { ps5: "PS5", "xbox-series": "Xbox", "switch-2": "Switch 2", switch: "Switch", pc: "PC", mobile: "Mobile" };
+
+function platformPills(ids) {
+  if (!ids.length) return `<span class="pill">TBA</span>`;
+  return ids.map((id) => `<a class="pill" href="/games/platforms/${id}/">${esc(PILL[id] || PLATFORMS[id].short)}</a>`).join("");
+}
+
+function shopLabel(game, asOf) {
+  if (!game.platforms.length || game.lead.precision === "none" || game.lead.precision === "year") return "";
+  if (game.lead.precision === "day" && game.lead.date >= asOf) return "Pre-order on Amazon";
+  return "Buy on Amazon";
+}
+
+function shopButton(game, asOf, className = "cta slim") {
+  const label = shopLabel(game, asOf);
+  if (!label) return `<a class="${className} ghost" href="${esc(game.path)}">View game</a>`;
+  const query = `${game.name} ${PLATFORMS[game.platforms[0]].short}`;
+  return `<a class="${className}" rel="sponsored nofollow noopener" href="${esc(amazonSearch(query))}">${label}</a>`;
+}
+
+function daysUntil(from, to) {
+  return Math.round((utcDate(to).getTime() - utcDate(from).getTime()) / 86400000);
+}
+
+function countdownBlock(game, asOf) {
+  if (game.lead.precision !== "day") {
+    return `<p class="count"><span class="count-k">Release day</span><span class="count-n">TBA</span></p>`;
+  }
+  if (game.lead.date < asOf) return "";
+  const days = daysUntil(asOf, game.lead.date);
+  const unit = days === 1 ? "day" : "days";
+  return `<p class="count" data-date="${esc(game.lead.date)}"><span class="count-k">Releases in</span><span class="count-n" data-days>${days}</span><span class="count-u" data-unit>${unit}</span></p>`;
+}
+
 function shell({ title, description, path, jsonld, body, current }) {
   const nav = [
-    ["Home", "/games/", "home"],
-    ["Calendar", "/games/calendar/", "calendar"],
-    ["This week", "/games/this-week/", "week"],
-    ["This month", "/games/this-month/", "month"],
-    ["Platforms", "/games/platforms/", "platforms"],
-    ["Genres", "/games/genres/", "genres"],
-    ["Anticipated", "/games/most-anticipated/", "anticipated"],
-    ["FAQ", "/games/faq/", "faq"],
+    ["Release Calendar", "/games/calendar/", "calendar"],
+    ["This Week", "/games/this-week/", "week"],
+    ["PS5", "/games/platforms/ps5/", "ps5"],
+    ["Xbox", "/games/platforms/xbox-series/", "xbox-series"],
+    ["Switch 2", "/games/platforms/switch-2/", "switch-2"],
+    ["PC", "/games/platforms/pc/", "pc"],
+    ["Most Anticipated", "/games/most-anticipated/", "anticipated"],
   ];
   const links = nav.map(([label, href, id]) => {
     const attrs = id === current ? ' aria-current="page"' : "";
@@ -332,7 +389,7 @@ function shell({ title, description, path, jsonld, body, current }) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(abs(path))}">
-<meta name="theme-color" content="#1c1612">
+<meta name="theme-color" content="#07080f">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
@@ -348,26 +405,21 @@ function shell({ title, description, path, jsonld, body, current }) {
 <link rel="manifest" href="/games/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@420;520;650&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@420;560;700&family=Oxanium:wght@600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">${jsonScript(jsonld)}</script>
 <link rel="stylesheet" href="/games/styles.css">
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
 <header class="top">
-  <div class="shell top-row">
-    <a class="brand" href="/games/">
-      <img src="/games/favicon.svg" width="40" height="40" alt="">
-      <span>Street<span>date</span></span>
-    </a>
+  <div class="shell bar">
+    <a class="brand" href="/games/"><span class="logo">STREET<b>DATE</b></span></a>
+    <nav class="nav" aria-label="Games">${links}</nav>
     <form class="find" action="/games/all/" method="get" role="search">
       <label class="sr" for="site-q">Search games</label>
-      <input id="site-q" name="q" type="search" placeholder="Search games" autocomplete="off">
+      <input id="site-q" name="q" type="search" placeholder="Search" autocomplete="off">
       <button type="submit">Search</button>
     </form>
-  </div>
-  <div class="shell">
-    <nav class="nav" aria-label="Games">${links}</nav>
   </div>
 </header>
 <main id="content" class="shell">
@@ -376,19 +428,46 @@ ${body}
 <footer class="foot">
   <div class="shell foot-grid">
     <div>
-      <p class="brand-name">Streetdate</p>
+      <p class="brand-name">STREETDATE</p>
       <p>Notable video game release dates, checked against public announcements. Last updated 25 November 2026.</p>
     </div>
     <nav aria-label="Footer">
       <a href="/games/calendar/">Release calendar</a>
-      <a href="/games/all/">All games</a>
+      <a href="/games/this-week/">This week</a>
+      <a href="/games/most-anticipated/">Most anticipated</a>
+      <a href="/games/genres/">Genres</a>
+      <a href="/games/platforms/switch/">Switch</a>
+      <a href="/games/platforms/mobile/">Mobile</a>
       <a href="/games/faq/">Release date FAQ</a>
+      <a href="/games/all/">All games</a>
       <a href="/scores/">Live sports scores</a>
       <a href="/">Calculators</a>
     </nav>
-    <p class="disclosure">Streetdate is not affiliated with Sony, Microsoft, Nintendo, or the studios named on these pages. Some Amazon.de links use affiliate tag cynews24-21. If you buy through them, Streetdate may earn a commission. Amazon sets the price. This site does not list wagers.</p>
+    <p class="disclosure">Streetdate is not affiliated with Sony, Microsoft, Nintendo, or the studios named on these pages. Some Amazon.de links use affiliate tag cynews24-21. If you buy through them, Streetdate may earn a commission. Amazon sets the price. This site does not list wagers. Cover art on these pages is generated pattern art, not publisher key art.</p>
   </div>
 </footer>
+<script>
+document.querySelectorAll("[data-date]").forEach((node) => {
+  const parts = node.getAttribute("data-date").split("-").map(Number);
+  if (parts.length < 3 || parts.some((part) => Number.isNaN(part))) return;
+  const target = Date.UTC(parts[0], parts[1] - 1, parts[2]);
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  const days = Math.round((target - today) / 86400000);
+  const slot = node.querySelector("[data-days]");
+  const unit = node.querySelector("[data-unit]");
+  if (!slot) return;
+  if (days > 1) slot.textContent = String(days);
+  else if (days === 1) { slot.textContent = "1"; if (unit) unit.textContent = "day"; }
+  else if (days === 0) node.textContent = "Releases today";
+  else node.textContent = "Out now";
+});
+document.querySelectorAll(".month-scroller").forEach((scroller) => {
+  const current = scroller.querySelector('[aria-current="true"]');
+  if (!current) return;
+  scroller.scrollLeft = current.offsetLeft - (scroller.clientWidth / 2) + (current.clientWidth / 2);
+});
+</script>
 </body>
 </html>
 `;
@@ -415,9 +494,41 @@ function gameRow(game) {
   </li>`;
 }
 
-function gameList(games, empty) {
+function coverCard(game, asOf) {
+  const hay = [game.name, ...(game.aka || []), game.when, ...game.platforms, ...game.genres].join(" ").toLowerCase();
+  return `<li class="cover" data-game="${esc(hay)}">
+    <a class="cover-link" href="${esc(game.path)}">
+      <span class="chip">${esc(rowDate(game))}</span>
+      ${coverMarkup(game.id, "card")}
+      <span class="cover-name">${esc(game.name)}</span>
+    </a>
+    <div class="cover-meta">${platformPills(game.platforms)}${shopButton(game, asOf)}</div>
+  </li>`;
+}
+
+function gameList(games, empty, asOf) {
   if (!games.length) return `<p class="empty">${esc(empty)}</p>`;
-  return `<ol class="schedule">${games.map(gameRow).join("")}</ol>`;
+  return `<ol class="covers wrap">${games.map((game) => coverCard(game, asOf)).join("")}</ol>`;
+}
+
+function rankList(games) {
+  return `<ol class="ranks">${games.map((game, index) => `<li><a href="${esc(game.path)}"><span class="n">${index + 1}</span><span><strong>${esc(game.name)}</strong><em>${esc(rowDate(game))} · ${esc(game.platforms[0] ? (PILL[game.platforms[0]] || PLATFORMS[game.platforms[0]].short) : "TBA")}</em></span>${coverMarkup(game.id, `rank${index}`)}</a></li>`).join("")}</ol>`;
+}
+
+function monthTabs(months, activeKey) {
+  const index = months.indexOf(activeKey);
+  const prev = index > 0 ? months[index - 1] : "";
+  const next = index >= 0 && index < months.length - 1 ? months[index + 1] : "";
+  let seenYear = "";
+  const links = months.map((key) => {
+    const [year, month] = key.split("-");
+    const label = MONTHS[Number(month) - 1].slice(0, 3).toUpperCase();
+    const current = key === activeKey ? ' aria-current="true"' : "";
+    const marker = year === seenYear ? "" : `<span class="year-mark">${year}</span>`;
+    seenYear = year;
+    return `${marker}<a href="${monthPath(key)}"${current}>${label}</a>`;
+  }).join("");
+  return `<nav class="months" aria-label="Months">${prev ? `<a class="step" href="${monthPath(prev)}" aria-label="Previous month">‹</a>` : `<span class="step" aria-hidden="true"></span>`}<div class="month-scroller">${links}</div>${next ? `<a class="step" href="${monthPath(next)}" aria-label="Next month">›</a>` : `<span class="step" aria-hidden="true"></span>`}</nav>`;
 }
 
 function faqHtml(faqs) {
@@ -473,9 +584,10 @@ function page(spec) {
       current: spec.current,
       jsonld: { "@context": "https://schema.org", "@graph": graph },
       body: `${crumbsHtml(spec.crumbs)}
-<h1>${esc(spec.h1)}</h1>
-${spec.intro.map((paragraph) => `<p class="lede">${esc(paragraph)}</p>`).join("")}
-${spec.main}`,
+<h1 class="${esc(spec.h1Class || "")}">${esc(spec.h1)}</h1>
+${spec.deferIntro ? "" : spec.intro.map((paragraph) => `<p class="lede">${esc(paragraph)}</p>`).join("")}
+${spec.main}
+${spec.deferIntro ? `<section class="about">${spec.intro.map((paragraph) => `<p class="lede">${esc(paragraph)}</p>`).join("")}</section>` : ""}`,
     }),
   };
 }
@@ -565,10 +677,10 @@ function gameFaqs(game) {
   ];
 }
 
-function amazonBlock(game) {
-  if (!game.platforms.length || game.lead.precision === "none" || game.lead.precision === "year") return "";
-  const query = `${game.name} ${PLATFORMS[game.platforms[0]].short}`;
-  return `<p class="buy"><a rel="sponsored nofollow noopener" href="${esc(amazonSearch(query))}">Look up ${esc(game.name)} on Amazon.de</a></p>`;
+function amazonBlock(game, asOf) {
+  const label = shopLabel(game, asOf);
+  if (!label) return "";
+  return `<p>${shopButton(game, asOf, "cta")}</p>`;
 }
 
 function releaseTable(game) {
@@ -642,6 +754,8 @@ export function buildGamesSite(data) {
     title: "Streetdate: 2026 video game release calendar",
     description: "Notable PS5, Xbox Series X|S, Switch 2, PC and mobile release dates for 2026, plus late 2025 and dated 2027 games. Updated 25 November 2026.",
     h1: "Video game release dates, with the unsure ones labelled",
+    h1Class: "eyebrow",
+    deferIntro: true,
     crumbs: [...baseCrumbs().slice(0, 1), { href: "/games/", label: "Streetdate" }],
     intro: [
       "Streetdate is a calendar of notable games for PlayStation 5, Xbox Series X|S, Switch 2, PC and mobile. It also keeps late 2025 launches and announced 2027 and 2028 windows.",
@@ -654,46 +768,45 @@ export function buildGamesSite(data) {
       ]),
       itemListLd("Most anticipated games on Streetdate", anticipated.slice(0, 8)),
     ],
-    main: `<section class="stats" aria-label="Snapshot">
-      <p><strong>${thisWeek.length}</strong><span>notable this week</span></p>
-      <p><strong>${thisMonth.length}</strong><span>in ${esc(MONTHS[Number(month.slice(5)) - 1])} 2026</span></p>
-      <p><strong>${coming.length}</strong><span>dated in the next 45 days</span></p>
-      <p><strong>25 Nov 2026</strong><span>last updated</span></p>
-    </section>
-    <div class="split">
-      <section>
-        <h2>This week, ${esc(formatSpan(week.start, week.end))}</h2>
-        ${gameList(thisWeek, "No notable release falls in this week.")}
-        <p><a href="/games/this-week/">Full week page</a></p>
+    main: (() => {
+      const featured = [...games]
+        .filter((game) => game.lead.precision === "day" && game.lead.date > asOf)
+        .sort((a, b) => (b.anticipation || 0) - (a.anticipation || 0) || compareRelease(a.lead, b.lead))[0] || anticipated[0];
+      const genre = GENRES[featured.genres[0]].name.toUpperCase();
+      const line = featured.blurb.split(/(?<=\.)\s/)[0];
+      return `<div class="stage">
+      <section class="hero">
+        <div class="hero-art">${coverMarkup(featured.id, "hero")}</div>
+        <div class="hero-copy">
+          <p class="kicker">${esc(genre)}</p>
+          <p class="hero-title">${esc(featured.name)}</p>
+          <p class="tag">${esc(line)}</p>
+          ${countdownBlock(featured, asOf)}
+          <div class="pills">${platformPills(featured.platforms)}</div>
+          <a class="cta" href="${esc(featured.path)}">View game</a>
+        </div>
       </section>
-      <section>
-        <h2>Recently released</h2>
-        ${gameList(justOut.slice(0, 6), "Nothing notable in the past three weeks.")}
+      <aside class="rank">
+        <header><h2>Most anticipated</h2><a href="/games/most-anticipated/">View all</a></header>
+        ${rankList(anticipated.slice(0, 5))}
+        <a class="full" href="/games/most-anticipated/">See full ranking</a>
+      </aside>
+      <section class="week">
+        <header class="section-head"><h2>Coming this week</h2><span>${esc(formatSpan(week.start, week.end))}</span></header>
+        ${monthTabs(months, month)}
+        ${thisWeek.length ? `<ol class="covers">${thisWeek.map((game) => coverCard(game, asOf)).join("")}</ol>` : `<p class="empty">No notable release falls in this week.</p>`}
+        <p class="more"><a href="/games/this-week/">View full week</a></p>
       </section>
     </div>
     <section>
-      <h2>Coming in the next 45 days</h2>
-      ${gameList(coming, "No further day-dated notable release in the next 45 days.")}
-      <p><a href="/games/this-month/">This month</a> · <a href="/games/calendar/2026/december/">December 2026</a></p>
+      <div class="section-head"><h2>Recently released</h2><a href="/games/this-month/">This month</a></div>
+      ${gameList(justOut.slice(0, 6), "Nothing notable in the past three weeks.", asOf)}
     </section>
     <section>
-      <h2>2026 by month</h2>
-      <nav class="chips">${monthLinks(months.filter((key) => key.startsWith("2026")))}</nav>
-    </section>
-    <section>
-      <h2>Browse by platform</h2>
-      <nav class="cards">${Object.entries(PLATFORMS).map(([id, platform]) => `<a class="card" href="/games/platforms/${id}/"><strong>${esc(platform.short)}</strong><span>${esc(platform.name)}</span></a>`).join("")}</nav>
-    </section>
-    <section>
-      <h2>Most anticipated</h2>
-      <p>An editorial order of titles that draw the most public attention. It is not a player vote.</p>
-      ${gameList(anticipated.slice(0, 8), "")}
-      <p><a href="/games/most-anticipated/">Full anticipated list</a></p>
-    </section>
-    <section>
-      <h2>Release-date questions</h2>
+      <div class="section-head"><h2>Release-date questions</h2></div>
       <nav class="related">${anticipated.slice(0, 6).map((game) => `<a href="${esc(game.questionPath)}">${esc(queryLabel(game))} release date</a>`).join("")}</nav>
-    </section>`,
+    </section>`;
+    })(),
   }));
 
   pages.push(page({
@@ -722,7 +835,7 @@ export function buildGamesSite(data) {
       intro: [`Notable ${year} releases in this catalogue. Annual sports games and storefront-only indies are not all listed.`],
       extraLd: [itemListLd(`${year} notable releases`, byDate(yearGames))],
       main: `<nav class="chips">${monthLinks(yearMonths)}</nav>
-      <section><h2>Everything dated in ${esc(year)}</h2>${gameList(byDate(yearGames), `No notable ${year} release is in the catalogue.`)}</section>`,
+      <section><h2>Everything dated in ${esc(year)}</h2>${gameList(byDate(yearGames), `No notable ${year} release is in the catalogue.`, asOf)}</section>`,
     }));
   }
 
@@ -743,8 +856,9 @@ export function buildGamesSite(data) {
       crumbs: [...baseCrumbs(), { href: "/games/calendar/", label: "Calendar" }, { href: `/games/calendar/${year}/`, label: year }, { href: monthPath(key), label }],
       intro: [`Notable games with a ${label} date. Confirmed, scheduled and early-access launches are labelled on each row.`],
       extraLd: [itemListLd(`${label} game releases`, list)],
-      main: `<nav class="pager">${prev ? `<a href="${monthPath(prev)}">Previous month</a>` : "<span></span>"}<a href="/games/calendar/${year}/">${esc(year)} overview</a>${next ? `<a href="${monthPath(next)}">Next month</a>` : "<span></span>"}</nav>
-      ${gameList(list, `No notable day-dated release in ${label}.`)}`,
+      main: `${monthTabs(months, key)}
+      <nav class="pager">${prev ? `<a href="${monthPath(prev)}">Previous month</a>` : "<span></span>"}<a href="/games/calendar/${year}/">${esc(year)} overview</a>${next ? `<a href="${monthPath(next)}">Next month</a>` : "<span></span>"}</nav>
+      ${gameList(list, `No notable day-dated release in ${label}.`, asOf)}`,
     }));
   }
 
@@ -762,7 +876,7 @@ export function buildGamesSite(data) {
         : "No notable day-dated game in this catalogue falls in the week. The next dated releases are below.",
     ],
     extraLd: [itemListLd("Games releasing this week", thisWeek)],
-    main: gameList(thisWeek, "No notable game in this catalogue is dated for this week.") + `<section><h2>Just after this week</h2>${gameList(coming.slice(0, 8), "")}</section>`,
+    main: gameList(thisWeek, "No notable game in this catalogue is dated for this week.", asOf) + `<section><div class="section-head"><h2>Just after this week</h2></div>${gameList(coming.slice(0, 8), "", asOf)}</section>`,
   }));
 
   const monthLabel = `${MONTHS[Number(month.slice(5)) - 1]} ${month.slice(0, 4)}`;
@@ -775,7 +889,7 @@ export function buildGamesSite(data) {
     crumbs: [...baseCrumbs(), { href: "/games/this-month/", label: "This month" }],
     intro: [`Every notable ${monthLabel} date in the catalogue, including games that have already shipped this month.`],
     extraLd: [itemListLd(`${monthLabel} releases`, thisMonth)],
-    main: `${gameList(thisMonth, `No notable ${monthLabel} release.`)}<p><a href="${monthPath(month)}">${esc(monthLabel)} on the calendar</a></p>`,
+    main: `${monthTabs(months, month)}${gameList(thisMonth, `No notable ${monthLabel} release.`, asOf)}<p><a href="${monthPath(month)}">${esc(monthLabel)} on the calendar</a></p>`,
   }));
 
   pages.push(page({
@@ -796,18 +910,18 @@ export function buildGamesSite(data) {
   for (const [id, platform] of Object.entries(PLATFORMS)) {
     const list = byDate(games.filter((game) => game.platforms.includes(id)));
     const amazon = platform.amazon
-      ? `<p class="buy"><a rel="sponsored nofollow noopener" href="${esc(amazonSearch(platform.amazon))}">Look up a ${esc(platform.name)} on Amazon.de</a></p>`
+      ? `<p><a class="cta" rel="sponsored nofollow noopener" href="${esc(amazonSearch(platform.amazon))}">Buy on Amazon</a></p>`
       : "";
     pages.push(page({
       path: `/games/platforms/${id}/`,
-      current: "platforms",
+      current: id,
       title: `${platform.name} release schedule | Streetdate`,
       description: trimMeta(`${platform.name} notable releases for 2025–2028, including ${list.slice(0, 3).map((game) => game.name).join(", ")}.`),
       h1: `${platform.name} release schedule`,
       crumbs: [...baseCrumbs(), { href: "/games/platforms/", label: "Platforms" }, { href: `/games/platforms/${id}/`, label: platform.short }],
       intro: [`Notable games that list ${platform.name}. Dates that are only a year, or not announced, stay marked as a window or TBA.`],
       extraLd: [itemListLd(`${platform.name} releases`, list)],
-      main: `${amazon}${gameList(list, `No notable ${platform.name} game is in the catalogue.`)}`,
+      main: `${amazon}${gameList(list, `No notable ${platform.name} game is in the catalogue.`, asOf)}`,
     }));
   }
 
@@ -834,7 +948,7 @@ export function buildGamesSite(data) {
       crumbs: [...baseCrumbs(), { href: "/games/genres/", label: "Genres" }, { href: `/games/genres/${id}/`, label: genre.name }],
       intro: [genre.blurb],
       extraLd: [itemListLd(`${genre.name} releases`, list)],
-      main: gameList(list, `No notable ${genre.name.toLowerCase()} game is in the catalogue yet.`),
+      main: gameList(list, `No notable ${genre.name.toLowerCase()} game is in the catalogue yet.`, asOf),
     }));
   }
 
@@ -850,7 +964,7 @@ export function buildGamesSite(data) {
       "Released games stay on the list when people are still searching the date. Windows without a day stay marked TBA.",
     ],
     extraLd: [itemListLd("Most anticipated games", anticipated)],
-    main: gameList(anticipated, "No anticipated games are flagged."),
+    main: rankList(anticipated),
   }));
 
   const siteFaqs = [
@@ -890,7 +1004,7 @@ export function buildGamesSite(data) {
       <label class="sr" for="filter-q">Filter games</label>
       <input id="filter-q" data-filter name="q" type="search" placeholder="Filter by name">
     </form>
-    ${gameList(letters, "No games.")}
+    ${gameList(letters, "No games.", asOf)}
     <script src="/games/filter.js"></script>`,
   }));
 
@@ -909,10 +1023,16 @@ export function buildGamesSite(data) {
       crumbs: [...baseCrumbs(), { href: "/games/calendar/", label: "Calendar" }, { href: game.path, label: game.name }],
       intro: [game.blurb],
       extraLd: [videoGameLd(game), faqLd(faqs)],
-      main: `<section class="hero-date">
-        <p class="when-k">${esc(confidenceLabel(game.lead.confidence))}</p>
-        <p class="big-date">${esc(game.when)}</p>
-        <p class="badge ${esc(game.status.code)}">${esc(game.status.label)}</p>
+      main: `<section class="game-hero">
+        ${coverMarkup(game.id, "page")}
+        <div>
+          <p class="kicker">${esc(confidenceLabel(game.lead.confidence))}</p>
+          <p class="big-date">${esc(game.when)}</p>
+          <p class="badge ${esc(game.status.code)}">${esc(game.status.label)}</p>
+          ${countdownBlock(game, asOf)}
+          <div class="pills">${platformPills(game.platforms)}</div>
+          ${amazonBlock(game, asOf)}
+        </div>
       </section>
       <dl class="facts">
         ${game.developer ? `<div><dt>Developer</dt><dd>${esc(game.developer)}</dd></div>` : ""}
@@ -924,7 +1044,6 @@ export function buildGamesSite(data) {
       ${game.facts?.length ? `<section><h2>What is public</h2><ul>${game.facts.map((fact) => `<li>${esc(fact)}</li>`).join("")}</ul></section>` : ""}
       <section><h2>Release dates</h2>${releaseTable(game)}</section>
       ${game.delays?.length ? `<section><h2>Delay history</h2><ol class="delays">${game.delays.map((item) => `<li>${esc(item)}</li>`).join("")}</ol></section>` : ""}
-      ${amazonBlock(game)}
       <p><a href="${esc(game.questionPath)}">When does ${esc(game.name)} come out?</a></p>
       ${faqHtml(faqs)}
       ${sourceList(game)}
@@ -942,9 +1061,15 @@ export function buildGamesSite(data) {
       crumbs: [...baseCrumbs(), { href: "/games/faq/", label: "FAQ" }, { href: game.questionPath, label: `${game.name} release date` }],
       intro: [faqs[0].a],
       extraLd: [faqLd(faqs)],
-      main: `<section class="hero-date">
-        <p class="big-date">${esc(game.when)}</p>
-        <p class="badge ${esc(game.status.code)}">${esc(game.status.label)}</p>
+      main: `<section class="game-hero">
+        ${coverMarkup(game.id, "ask")}
+        <div>
+          <p class="big-date">${esc(game.when)}</p>
+          <p class="badge ${esc(game.status.code)}">${esc(game.status.label)}</p>
+          ${countdownBlock(game, asOf)}
+          <div class="pills">${platformPills(game.platforms)}</div>
+          ${amazonBlock(game, asOf)}
+        </div>
       </section>
       ${faqHtml(faqs)}
       <p><a href="${esc(game.path)}">Full ${esc(game.name)} page</a>${monthHref ? ` · <a href="${monthHref}">Month calendar</a>` : ""}</p>
